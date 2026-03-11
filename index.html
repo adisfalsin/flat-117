@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flat 117 — Nell Gwynn House — Renovation Progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:       #F8F4EE;
+  --cream-dark:  #EDE8DF;
+  --warm-white:  #FDFAF6;
+  --gold:        #9A7B3C;
+  --gold-light:  #C4A45A;
+  --gold-rule:   #C8A96E;
+  --charcoal:    #1C1C1C;
+  --mid:         #4A4540;
+  --muted:       #7A736B;
+  --border:      #D8D0C4;
+  --border-light:#EBE5DC;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--warm-white);
+  color: var(--charcoal);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; font-size: 14px; line-height: 1.85;
+}
+.topbar { background: var(--charcoal); position: sticky; top: 0; z-index: 200; }
+.topbar-inner {
+  max-width: 1100px; margin: 0 auto; padding: 14px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.topbar-firm { font-weight: 600; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); }
+.topbar-nav { display: flex; gap: 32px; }
+.topbar-nav a { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9A948C; text-decoration: none; transition: color 0.2s; }
+.topbar-nav a:hover, .topbar-nav a.active { color: var(--gold-light); }
+.hero { background: var(--charcoal); padding: 80px 48px 72px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(154,123,60,0.18) 0%, transparent 60%); pointer-events: none; }
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+.hero-eyebrow::after { content: ''; flex-grow: 1; max-width: 80px; height: 1px; background: var(--gold-rule); }
+h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(42px, 5.5vw, 68px); line-height: 1.08; color: #F0EBE2; letter-spacing: -0.01em; margin-bottom: 6px; }
+h1 em { font-style: italic; color: var(--gold-light); }
+.hero-address { font-size: 12px; color: #7A736B; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 14px; margin-bottom: 40px; }
+.hero-meta { display: flex; gap: 0; border-top: 1px solid #2E2B27; padding-top: 32px; flex-wrap: wrap; }
+.meta-block { padding: 0 40px 0 0; border-right: 1px solid #2E2B27; margin-right: 40px; margin-bottom: 16px; }
+.meta-block:last-child { border-right: none; }
+.meta-label { font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #5A544E; margin-bottom: 4px; }
+.meta-value { font-size: 13px; color: #D8D0C4; font-weight: 400; }
+.meta-value.active { color: #6DBF82; }
+.gold-rule { height: 2px; background: linear-gradient(to right, var(--gold), var(--gold-light), transparent); max-width: 1100px; margin: 0 auto; }
+.salutation-band { background: var(--cream); border-bottom: 1px solid var(--border); }
+.salutation-inner { max-width: 1100px; margin: 0 auto; padding: 48px 48px; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
+.salutation-label { font-size: 9px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); padding-top: 4px; }
+.salutation-text p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 14px; }
+.salutation-text p:last-child { margin-bottom: 0; }
+.status-band { background: var(--warm-white); border-bottom: 1px solid var(--border); padding: 36px 48px; }
+.status-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; }
+.status-cell { padding: 0 40px 0 0; border-right: 1px solid var(--border); margin-right: 40px; display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.status-cell:last-child { border-right: none; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.dot-green { background: #4CAF50; box-shadow: 0 0 6px rgba(76,175,80,0.5); }
+.dot-amber { background: #FFC107; box-shadow: 0 0 6px rgba(255,193,7,0.5); }
+.dot-blue  { background: #64B5F6; box-shadow: 0 0 6px rgba(100,181,246,0.5); }
+.status-label { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; display: block; }
+.status-value { font-size: 11px; font-weight: 600; color: var(--charcoal); letter-spacing: 0.04em; display: block; }
+.main { max-width: 1100px; margin: 0 auto; padding: 0 48px 100px; }
+.section { padding-top: 72px; }
+.section-heading { display: flex; align-items: baseline; gap: 20px; margin-bottom: 48px; border-bottom: 1px solid var(--border-light); padding-bottom: 18px; }
+.section-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold-light); letter-spacing: 0.2em; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--charcoal); letter-spacing: 0.02em; }
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.card { background: var(--warm-white); padding: 36px 40px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; transition: background 0.2s; }
+.card:hover { background: var(--cream); }
+.card-num { font-family: 'Cormorant Garamond', serif; font-size: 11px; color: var(--gold-light); letter-spacing: 0.2em; text-transform: uppercase; }
+.card-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--charcoal); }
+.card-desc { font-size: 13px; color: var(--muted); line-height: 1.75; max-width: 380px; }
+.card-link { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--gold-light); padding-bottom: 1px; display: inline-block; margin-top: 6px; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.photo-item { overflow: hidden; }
+.photo-placeholder { aspect-ratio: 4/3; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; }
+.photo-placeholder span { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.photo-caption { padding: 9px 12px; font-size: 10px; color: var(--muted); letter-spacing: 0.06em; font-style: italic; background: var(--cream-dark); border-top: 1px solid var(--border-light); }
+.activity-list { display: flex; flex-direction: column; }
+.activity-item { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--border-light); }
+.activity-item:last-child { border-bottom: none; }
+.activity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.activity-date { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+.activity-text { font-size: 13px; color: var(--mid); line-height: 1.7; }
+.signoff-band { background: var(--warm-white); padding: 64px 48px 72px; border-top: 1px solid var(--border); }
+.signoff-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.signoff-message p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 12px; }
+.signoff-block { border-top: 2px solid var(--gold-rule); padding-top: 24px; }
+.signoff-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
+.signoff-role { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.signoff-details { font-size: 12px; color: var(--muted); line-height: 2; }
+.signoff-details a { color: var(--gold); text-decoration: none; }
+.signoff-details a:hover { text-decoration: underline; }
+.footer { background: var(--charcoal); padding: 24px 48px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; font-size: 11px; color: #5A544E; letter-spacing: 0.08em; }
+.footer-inner span { color: var(--gold-light); }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.hero { animation: fadeUp 0.55s ease both; }
+.salutation-band { animation: fadeUp 0.55s ease both; animation-delay: 0.06s; }
+.status-band { animation: fadeUp 0.55s ease both; animation-delay: 0.10s; }
+@media (max-width: 760px) {
+  .topbar-inner, .hero, .salutation-inner, .status-band, .main, .signoff-band, .footer { padding-left: 20px; padding-right: 20px; }
+  .topbar-nav { display: none; }
+  .salutation-inner, .signoff-inner { grid-template-columns: 1fr; gap: 20px; }
+  .status-inner { flex-wrap: wrap; gap: 20px; }
+  .status-cell { border-right: none; padding-right: 0; margin-right: 0; }
+  .card-grid { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-firm">ASA Electrical Ltd</span>
+    <nav class="topbar-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="progress-report.html">Progress Report</a>
+      <a href="update-r2.html">Latest Update</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Renovation Works &nbsp;·&nbsp; Live Project</div>
+    <h1>Flat 117<br><em>Nell Gwynn House</em></h1>
+    <div class="hero-address">Sloane Avenue &nbsp;·&nbsp; Chelsea &nbsp;·&nbsp; London SW3</div>
+    <div class="hero-meta">
+      <div class="meta-block">
+        <div class="meta-label">Current Phase</div>
+        <div class="meta-value active">Installation</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Rip-Out</div>
+        <div class="meta-value active">Complete</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Contractor</div>
+        <div class="meta-value">ASA Electrical Ltd</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Mrs Todd Burlingame</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Last Updated</div>
+        <div class="meta-value">March 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="gold-rule"></div>
+
+<div class="salutation-band">
+  <div class="salutation-inner">
+    <div class="salutation-label">Project Overview</div>
+    <div class="salutation-text">
+      <p>This page provides a live overview of renovation works at Flat 117, Nell Gwynn House. All documentation, progress updates, and scope records are maintained here for your reference throughout the project.</p>
+      <p>The rip-out phase has been completed. Kitchen installation and bathroom tiling are the current focus. Detailed progress reports and the latest site update are available below.</p>
+    </div>
+  </div>
+</div>
+
+<div class="status-band">
+  <div class="status-inner">
+    <div class="status-cell">
+      <div class="status-dot dot-green"></div>
+      <div>
+        <span class="status-label">Rip-Out Phase</span>
+        <span class="status-value">Complete</span>
+      </div>
+    </div>
+    <div class="status-cell">
+      <div class="status-dot dot-amber"></div>
+      <div>
+        <span class="status-label">Current Phase</span>
+        <span class="status-value">Installation</span>
+      </div>
+    </div>
+    <div class="status-cell">
+      <div class="status-dot dot-blue"></div>
+      <div>
+        <span class="status-label">Next Milestone</span>
+        <span class="status-value">Bathroom Tiling</span>
+      </div>
+    </div>
+    <div class="status-cell">
+      <div class="status-dot dot-amber"></div>
+      <div>
+        <span class="status-label">Client Actions</span>
+        <span class="status-value">2 Required</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">01</span>
+      <span class="section-title">Project Documents</span>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="progress-report.html">
+        <div class="card-num">Full Report</div>
+        <div class="card-title">Progress Report</div>
+        <div class="card-desc">Comprehensive scope of works, completed items, scope changes, timeline and all project notes in a single reference document.</div>
+        <span class="card-link">View Report →</span>
+      </a>
+      <a class="card" href="update-r2.html">
+        <div class="card-num">Update R2</div>
+        <div class="card-title">Latest Site Update</div>
+        <div class="card-desc">The most recent progress update from site, including works completed, outstanding items and actions required from client.</div>
+        <span class="card-link">View Update →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">02</span>
+      <span class="section-title">Site Photography</span>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-item">
+        <div class="photo-placeholder"><span>Kitchen — Before</span></div>
+        <div class="photo-caption">Kitchen — condition before works commenced</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder"><span>Kitchen — Rip-Out</span></div>
+        <div class="photo-caption">Kitchen — stripped and ready for installation</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder"><span>Bathroom — Before</span></div>
+        <div class="photo-caption">Bathroom — condition before works commenced</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder"><span>Bathroom — Rip-Out</span></div>
+        <div class="photo-caption">Bathroom — following full strip-out</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder"><span>Electrical Works</span></div>
+        <div class="photo-caption">First-fix electrical works in progress</div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder"><span>Site Overview</span></div>
+        <div class="photo-caption">General site overview</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">03</span>
+      <span class="section-title">Recent Activity</span>
+    </div>
+    <div class="activity-list">
+      <div class="activity-item">
+        <div class="activity-dot dot-green"></div>
+        <div>
+          <div class="activity-date">March 2026</div>
+          <div class="activity-text">Rip-out phase fully completed. Kitchen and bathroom stripped to shell. All debris cleared from site.</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot dot-green"></div>
+        <div>
+          <div class="activity-date">March 2026</div>
+          <div class="activity-text">Electrical first-fix investigations completed. TV aerial cable renewed to both TV positions. Cabling assessed throughout.</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot dot-amber"></div>
+        <div>
+          <div class="activity-date">Awaiting Decision</div>
+          <div class="activity-text">Kitchen finish selection presented — Howdens Clerkenwell White, gloss or matt. Client decision outstanding; critical path item.</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot dot-amber"></div>
+        <div>
+          <div class="activity-date">Awaiting Approval</div>
+          <div class="activity-text">Bathroom tile specification confirmed — Regal Grey Matt 60×29.9cm, SKU 752966, Topps Tiles, approx. £958. Order approval pending.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="signoff-band">
+  <div class="signoff-inner">
+    <div class="signoff-message">
+      <p>Please do not hesitate to contact me directly should you have any questions or wish to discuss any aspect of the works. I am on site daily and available at the details opposite.</p>
+    </div>
+    <div>
+      <div class="signoff-block">
+        <div class="signoff-name">Adivalter Sfalsin</div>
+        <div class="signoff-role">Site Manager &nbsp;·&nbsp; ASA Electrical Ltd</div>
+        <div class="signoff-details">
+          Mob: <a href="tel:07886546386">0788 654 6386</a><br>
+          Email: <a href="mailto:asaelectrical@me.com">asaelectrical@me.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>ASA Electrical Ltd</span> &nbsp;·&nbsp; Flat 117, Nell Gwynn House &nbsp;·&nbsp; Renovation Progress
+  </div>
+</footer>
+
+</body>
+</html>

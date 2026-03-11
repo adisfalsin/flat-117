@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Update R2 — Flat 117, Nell Gwynn House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:       #F8F4EE;
+  --cream-dark:  #EDE8DF;
+  --warm-white:  #FDFAF6;
+  --gold:        #9A7B3C;
+  --gold-light:  #C4A45A;
+  --gold-rule:   #C8A96E;
+  --charcoal:    #1C1C1C;
+  --mid:         #4A4540;
+  --muted:       #7A736B;
+  --border:      #D8D0C4;
+  --border-light:#EBE5DC;
+  --red-alert:   #8B2222;
+  --green-ok:    #2C5F3A;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--warm-white); color: var(--charcoal); font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.85; }
+.topbar { background: var(--charcoal); position: sticky; top: 0; z-index: 200; }
+.topbar-inner { max-width: 1100px; margin: 0 auto; padding: 14px 48px; display: flex; align-items: center; justify-content: space-between; }
+.topbar-firm { font-weight: 600; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); }
+.topbar-nav { display: flex; gap: 32px; }
+.topbar-nav a { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9A948C; text-decoration: none; transition: color 0.2s; }
+.topbar-nav a:hover, .topbar-nav a.active { color: var(--gold-light); }
+.hero { background: var(--charcoal); padding: 80px 48px 72px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(154,123,60,0.18) 0%, transparent 60%); pointer-events: none; }
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+.hero-eyebrow::after { content: ''; flex-grow: 1; max-width: 80px; height: 1px; background: var(--gold-rule); }
+h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(42px, 5.5vw, 68px); line-height: 1.08; color: #F0EBE2; letter-spacing: -0.01em; margin-bottom: 6px; }
+h1 em { font-style: italic; color: var(--gold-light); }
+.hero-address { font-size: 12px; color: #7A736B; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 14px; margin-bottom: 40px; }
+.hero-meta { display: flex; gap: 0; border-top: 1px solid #2E2B27; padding-top: 32px; flex-wrap: wrap; }
+.meta-block { padding: 0 40px 0 0; border-right: 1px solid #2E2B27; margin-right: 40px; margin-bottom: 16px; }
+.meta-block:last-child { border-right: none; }
+.meta-label { font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #5A544E; margin-bottom: 4px; }
+.meta-value { font-size: 13px; color: #D8D0C4; font-weight: 400; }
+.meta-value.green { color: #6DBF82; }
+.meta-value.amber { color: #FFC107; }
+.gold-rule { height: 2px; background: linear-gradient(to right, var(--gold), var(--gold-light), transparent); max-width: 1100px; margin: 0 auto; }
+.salutation-band { background: var(--cream); border-bottom: 1px solid var(--border); }
+.salutation-inner { max-width: 1100px; margin: 0 auto; padding: 48px 48px; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
+.salutation-label { font-size: 9px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); padding-top: 4px; }
+.salutation-text p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 14px; }
+.salutation-text p:last-child { margin-bottom: 0; }
+.main { max-width: 1100px; margin: 0 auto; padding: 0 48px 100px; }
+.section { padding-top: 72px; }
+.section-heading { display: flex; align-items: baseline; gap: 20px; margin-bottom: 48px; border-bottom: 1px solid var(--border-light); padding-bottom: 18px; }
+.section-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold-light); letter-spacing: 0.2em; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--charcoal); letter-spacing: 0.02em; }
+.article { display: grid; grid-template-columns: 220px 1fr; gap: 48px; margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--border-light); }
+.article:last-child { border-bottom: none; padding-bottom: 0; }
+.article-label-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; font-style: italic; color: var(--charcoal); line-height: 1.3; margin-bottom: 10px; }
+.article-label-tag { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-light); padding: 3px 9px; }
+.article-label-tag.tag-ok   { color: var(--green-ok); border-color: #6DBF82; background: rgba(44,95,58,0.05); }
+.article-label-tag.tag-warn { color: var(--red-alert); border-color: #E57373; background: rgba(139,34,34,0.05); }
+.article-label-tag.tag-info { color: #1A5276; border-color: #5DADE2; background: rgba(26,82,118,0.05); }
+.article-body p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 14px; max-width: 580px; }
+.article-body p:last-child { margin-bottom: 0; }
+.notice { border-left: 3px solid var(--gold-light); background: var(--cream); padding: 16px 20px; margin: 18px 0; max-width: 560px; font-size: 13px; line-height: 1.75; color: var(--mid); }
+.notice strong { color: var(--charcoal); font-weight: 600; }
+.notice.notice-warn { border-left-color: #E57373; background: rgba(139,34,34,0.04); }
+.charge-box { display: flex; justify-content: space-between; align-items: center; gap: 20px; border: 1px solid var(--border); border-left: 3px solid var(--gold-light); background: var(--cream); padding: 18px 22px; margin: 18px 0; max-width: 560px; }
+.charge-label { font-size: 13px; color: var(--mid); line-height: 1.5; flex-grow: 1; }
+.charge-amount { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); white-space: nowrap; text-align: right; }
+.charge-vat { display: block; font-size: 10px; color: var(--muted); letter-spacing: 0.1em; }
+/* CHECKLIST */
+.checklist { display: flex; flex-direction: column; gap: 0; max-width: 560px; }
+.check-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border-light); font-size: 13px; color: var(--mid); line-height: 1.6; }
+.check-item:last-child { border-bottom: none; }
+.check-icon { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; }
+.check-done { background: rgba(44,95,58,0.12); color: var(--green-ok); }
+.check-pending { background: rgba(255,193,7,0.15); color: #7A5A00; }
+/* PHOTO */
+.photo-row { display: grid; gap: 10px; margin: 24px 0; }
+.photo-row.r2 { grid-template-columns: 1fr 1fr; max-width: 560px; }
+.photo-row.r3 { grid-template-columns: 1fr 1fr 1fr; }
+.photo-card { overflow: hidden; }
+.photo-placeholder { aspect-ratio: 4/3; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; }
+.photo-placeholder span { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.photo-caption { padding: 9px 12px; font-size: 10px; color: var(--muted); letter-spacing: 0.06em; font-style: italic; background: var(--cream-dark); border-top: 1px solid var(--border-light); }
+/* ACTIONS BAND */
+.actions-band { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-top: 72px; padding: 56px 48px; }
+.actions-inner { max-width: 1100px; margin: 0 auto; }
+.actions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+.action-item { display: flex; gap: 18px; align-items: flex-start; }
+.action-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--gold-light); line-height: 1; width: 28px; flex-shrink: 0; }
+.action-text { font-size: 13px; line-height: 1.75; color: var(--mid); padding-top: 6px; }
+.action-text strong { color: var(--charcoal); font-weight: 600; display: block; margin-bottom: 4px; }
+.band-heading { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 20px; }
+.band-heading::after { content: ''; flex-grow: 1; height: 1px; background: var(--border); }
+.signoff-band { background: var(--warm-white); padding: 64px 48px 72px; }
+.signoff-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.signoff-message p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 12px; }
+.signoff-block { border-top: 2px solid var(--gold-rule); padding-top: 24px; }
+.signoff-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
+.signoff-role { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.signoff-details { font-size: 12px; color: var(--muted); line-height: 2; }
+.signoff-details a { color: var(--gold); text-decoration: none; }
+.signoff-details a:hover { text-decoration: underline; }
+.footer { background: var(--charcoal); padding: 24px 48px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; font-size: 11px; color: #5A544E; letter-spacing: 0.08em; }
+.footer-inner span { color: var(--gold-light); }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.hero, .salutation-band, .section, .actions-band, .signoff-band { animation: fadeUp 0.55s ease both; }
+.salutation-band { animation-delay: 0.06s; }
+@media (max-width: 760px) {
+  .topbar-inner, .hero, .salutation-inner, .main, .actions-band, .signoff-band, .footer { padding-left: 20px; padding-right: 20px; }
+  .topbar-nav { display: none; }
+  .salutation-inner, .signoff-inner { grid-template-columns: 1fr; gap: 20px; }
+  .article { grid-template-columns: 1fr; gap: 20px; }
+  .actions-grid { grid-template-columns: 1fr; }
+  .photo-row.r2, .photo-row.r3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-firm">ASA Electrical Ltd</span>
+    <nav class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="progress-report.html">Progress Report</a>
+      <a href="update-r2.html" class="active">Latest Update</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Site Progress Report &nbsp;·&nbsp; Update R2</div>
+    <h1>Flat 117<br><em>Nell Gwynn House</em></h1>
+    <div class="hero-address">Sloane Avenue &nbsp;·&nbsp; Chelsea &nbsp;·&nbsp; London SW3</div>
+    <div class="hero-meta">
+      <div class="meta-block">
+        <div class="meta-label">Date Issued</div>
+        <div class="meta-value">March 2026</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Mrs Todd Burlingame</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Site Manager</div>
+        <div class="meta-value">Adivalter Sfalsin</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Rip-Out</div>
+        <div class="meta-value green">Complete</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Current Phase</div>
+        <div class="meta-value amber">Installation</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="gold-rule"></div>
+
+<div class="salutation-band">
+  <div class="salutation-inner">
+    <div class="salutation-label">Dear Mrs Burlingame</div>
+    <div class="salutation-text">
+      <p>Please find below my latest update from site at Flat 117. This report covers all works completed since the previous update, the current position on all active items, and the actions I require from you in order to keep the programme moving without delay.</p>
+      <p>Two client decisions remain outstanding and are on the critical path. I would be grateful for your response at your earliest convenience.</p>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 01 WORKS COMPLETED -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">01</span>
+      <span class="section-title">Works Completed Since Last Update</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Rip-Out — Kitchen &amp; Bathroom</div>
+        <span class="article-label-tag tag-ok">Complete</span>
+      </div>
+      <div class="article-body">
+        <p>Full rip-out of both kitchen and bathroom has been completed. All existing units, appliances, bathroom suite, tiles and associated fixtures have been removed and cleared. Both rooms are now stripped back to shell and ready to receive new works.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>Kitchen units and appliances removed</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Bathroom suite, tiles and finishes stripped</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>All debris cleared from site</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Surfaces inspected and assessed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Electrical First-Fix &amp; Aerial</div>
+        <span class="article-label-tag tag-ok">Complete</span>
+      </div>
+      <div class="article-body">
+        <p>Electrical investigations have been completed throughout. Both TV socket positions were tested — neither was found to be live. On lifting the bedroom floor, the aerial cable was found to have been cut at some point in the past. A new high-grade coaxial cable has been run from the entrance hatch to both TV positions, restoring signal to the living room and bedroom.</p>
+        <div class="charge-box">
+          <div class="charge-label">TV aerial cable renewal — new high-grade cable, full run to both TV positions, labour &amp; materials</div>
+          <div>
+            <div class="charge-amount">£220.00</div>
+            <span class="charge-vat">+ VAT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Specification &amp; Procurement</div>
+        <span class="article-label-tag tag-ok">Complete</span>
+      </div>
+      <div class="article-body">
+        <p>Kitchen finish options have been compiled and presented to you — Howdens Clerkenwell White in both gloss and matt. Bathroom tile specification has been confirmed as Regal Grey Matt 60×29.9cm (SKU 752966, Topps Tiles) for both floor and wall areas.</p>
+        <div class="notice">
+          <strong>Tile Estimate</strong> — Floor approx. 4.41 m², walls approx. 10.12 m², total with 15% wastage approx. 14.53 m². Estimated cost: <strong>approx. £958.49</strong>. To be confirmed at checkout.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 02 SCOPE CHANGES -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">02</span>
+      <span class="section-title">Scope Changes — For Your Record</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Wall Unit Heights</div>
+        <span class="article-label-tag tag-warn">Scope Change</span>
+      </div>
+      <div class="article-body">
+        <p>Wall units have been revised from 900mm to 720mm height within the Howdens Clerkenwell White range. This remains a meaningful improvement on the original 600mm units and does not affect the visual outcome of the kitchen.</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Cooker Hood</div>
+        <span class="article-label-tag tag-warn">Scope Change</span>
+      </div>
+      <div class="article-body">
+        <p>The chimney-style cooker hood has been replaced with a built-in integrated hood. This avoids the need for boxing works to the kitchen flank wall and delivers a cleaner result consistent with the overall specification.</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Bulkhead</div>
+        <span class="article-label-tag tag-warn">Scope Change</span>
+      </div>
+      <div class="article-body">
+        <p>The bulkhead cannot be removed within the agreed programme. On opening the void, exposed loose cabling was discovered inside along with unfinished surfaces. The bulkhead will be retained and made good as part of the decoration works.</p>
+        <div class="notice notice-warn">
+          <strong>Note</strong> — Exposed cabling found inside the bulkhead void has been made safe as part of first-fix works.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 03 PHOTOGRAPHY -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">03</span>
+      <span class="section-title">Site Photography</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Kitchen &amp; Bathroom</div>
+        <span class="article-label-tag">Rip-Out Complete</span>
+      </div>
+      <div class="article-body">
+        <div class="photo-row r2">
+          <div class="photo-card">
+            <div class="photo-placeholder"><span>Kitchen</span></div>
+            <div class="photo-caption">Kitchen — following full strip-out</div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-placeholder"><span>Bathroom</span></div>
+            <div class="photo-caption">Bathroom — following full strip-out</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Electrical Works</div>
+        <span class="article-label-tag tag-ok">First-Fix Complete</span>
+      </div>
+      <div class="article-body">
+        <div class="photo-row r2">
+          <div class="photo-card">
+            <div class="photo-placeholder"><span>Electrical</span></div>
+            <div class="photo-caption">Aerial cable renewal — new cable run to both TV positions</div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-placeholder"><span>Overview</span></div>
+            <div class="photo-caption">General site overview</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 04 OUTSTANDING / NEXT STEPS -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">04</span>
+      <span class="section-title">Outstanding Items &amp; Next Steps</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Outstanding Items</div>
+        <span class="article-label-tag tag-warn">Action Required</span>
+      </div>
+      <div class="article-body">
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-pending">○</div>Kitchen door finish decision (gloss or matt) — critical path</div>
+          <div class="check-item"><div class="check-icon check-pending">○</div>Bathroom tile order approval — approx. £958.49, SKU 752966</div>
+          <div class="check-item"><div class="check-icon check-pending">○</div>Redundant TV socket outlets — confirm removal or retention</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Planned Next Steps</div>
+        <span class="article-label-tag tag-info">Programme</span>
+      </div>
+      <div class="article-body">
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-pending">→</div>Kitchen unit installation — subject to client finish decision</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Bathroom tiling — floor and walls — subject to tile order approval</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Bathroom suite installation following tiling completion</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Electrical second-fix throughout</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Decoration — Dulux Easycare Timeless throughout</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Window and ledge repairs. Snagging and handover.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- /main -->
+
+<!-- ACTIONS BAND -->
+<div class="actions-band">
+  <div class="actions-inner">
+    <div class="band-heading">Actions Required from Client</div>
+    <div class="actions-grid">
+      <div class="action-item">
+        <span class="action-num">1</span>
+        <div class="action-text"><strong>Kitchen Door Finish</strong>Please confirm your preferred finish for the Howdens Clerkenwell White kitchen doors — gloss or matt. This is a critical-path decision and installation cannot proceed without it.</div>
+      </div>
+      <div class="action-item">
+        <span class="action-num">2</span>
+        <div class="action-text"><strong>Bathroom Tile Order</strong>Please approve the Regal Grey Matt tile order (SKU 752966, Topps Tiles). Estimated cost approx. £958.49 including 15% wastage. Prices subject to confirmation at checkout.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGN OFF -->
+<div class="signoff-band">
+  <div class="signoff-inner">
+    <div class="signoff-message">
+      <p>As ever, please do not hesitate to contact me directly should you have any questions or if you would like to discuss any of the above matters on site.</p>
+    </div>
+    <div>
+      <div class="signoff-block">
+        <div class="signoff-name">Adivalter Sfalsin</div>
+        <div class="signoff-role">Site Manager &nbsp;·&nbsp; ASA Electrical Ltd</div>
+        <div class="signoff-details">
+          Mob: <a href="tel:07886546386">0788 654 6386</a><br>
+          Email: <a href="mailto:asaelectrical@me.com">asaelectrical@me.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>ASA Electrical Ltd</span> &nbsp;·&nbsp; Site Update R2 — Flat 117, Nell Gwynn House
+  </div>
+</footer>
+
+</body>
+</html>
