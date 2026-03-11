@@ -96,6 +96,8 @@ h1 em { font-style: italic; color: var(--gold-light); }
 .photo-row.r2 { grid-template-columns: 1fr 1fr; max-width: 560px; }
 .photo-row.r3 { grid-template-columns: 1fr 1fr 1fr; }
 .photo-card { overflow: hidden; }
+.photo-card img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; filter: saturate(0.92) contrast(1.03); transition: filter 0.3s; }
+.photo-card img:hover { filter: saturate(1) contrast(1.05); }
 .photo-placeholder { aspect-ratio: 4/3; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; }
 .photo-placeholder span { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
 .photo-caption { padding: 9px 12px; font-size: 10px; color: var(--muted); letter-spacing: 0.06em; font-style: italic; background: var(--cream-dark); border-top: 1px solid var(--border-light); }
@@ -397,12 +399,12 @@ h1 em { font-style: italic; color: var(--gold-light); }
       <div class="article-body">
         <div class="photo-row r2">
           <div class="photo-card">
-            <div class="photo-placeholder"><span>Kitchen — Before</span></div>
+            <img src="images/kitchen-before.jpg" alt="Kitchen before works commenced">
             <div class="photo-caption">Kitchen — condition before works commenced</div>
           </div>
           <div class="photo-card">
-            <div class="photo-placeholder"><span>Kitchen — Rip-Out</span></div>
-            <div class="photo-caption">Kitchen — stripped and ready for installation</div>
+            <img src="images/site-overview.jpg" alt="Site overview during works">
+            <div class="photo-caption">General site overview during works</div>
           </div>
         </div>
       </div>
@@ -416,12 +418,12 @@ h1 em { font-style: italic; color: var(--gold-light); }
       <div class="article-body">
         <div class="photo-row r2">
           <div class="photo-card">
-            <div class="photo-placeholder"><span>Bathroom — Before</span></div>
-            <div class="photo-caption">Bathroom — condition before works commenced</div>
+            <img src="images/bathroom-strip.jpg" alt="Bathroom after strip-out">
+            <div class="photo-caption">Bathroom — following full strip-out</div>
           </div>
           <div class="photo-card">
-            <div class="photo-placeholder"><span>Bathroom — Rip-Out</span></div>
-            <div class="photo-caption">Bathroom — following full strip-out</div>
+            <img src="images/bathroom-tiling.jpg" alt="Bathroom floor tiling in progress">
+            <div class="photo-caption">Bathroom — floor tiling in progress</div>
           </div>
         </div>
       </div>
@@ -435,12 +437,12 @@ h1 em { font-style: italic; color: var(--gold-light); }
       <div class="article-body">
         <div class="photo-row r2">
           <div class="photo-card">
-            <div class="photo-placeholder"><span>Electrical Works</span></div>
-            <div class="photo-caption">First-fix electrical works in progress</div>
+            <img src="images/electrical-works.jpg" alt="Electrical first-fix works">
+            <div class="photo-caption">Electrical first-fix works in progress</div>
           </div>
           <div class="photo-card">
-            <div class="photo-placeholder"><span>Site Overview</span></div>
-            <div class="photo-caption">General site overview</div>
+            <img src="images/window-ledge.jpg" alt="Window and ledge works">
+            <div class="photo-caption">Window &amp; ledge — works in progress</div>
           </div>
         </div>
       </div>
@@ -479,7 +481,7 @@ h1 em { font-style: italic; color: var(--gold-light); }
         <div class="signoff-role">Site Manager &nbsp;·&nbsp; ASA Electrical Ltd</div>
         <div class="signoff-details">
           Mob: <a href="tel:07886546386">0788 654 6386</a><br>
-          Email: <a href="mailto:asaelectrical@me.com">asaelectrical@me.com</a>
+          Email: <a href="/cdn-cgi/l/email-protection#0b6a786a6e676e687f7962686a674b666e25686466"><span class="__cf_email__" data-cfemail="8decfeece8e1e8eef9ffe4eeece1cde0e8a3eee2e0">[email&#160;protected]</span></a>
         </div>
       </div>
     </div>
@@ -487,10 +489,4 @@ h1 em { font-style: italic; color: var(--gold-light); }
 </div>
 
 <footer class="footer">
-  <div class="footer-inner">
-    <span>ASA Electrical Ltd</span> &nbsp;·&nbsp; Progress Report — Flat 117, Nell Gwynn House
-  </div>
-</footer>
-
-</body>
-</html>
+  <div class="footer-inner

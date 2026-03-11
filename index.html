@@ -81,6 +81,8 @@ h1 em { font-style: italic; color: var(--gold-light); }
 .card-link { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--gold-light); padding-bottom: 1px; display: inline-block; margin-top: 6px; }
 .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .photo-item { overflow: hidden; }
+.photo-item img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; filter: saturate(0.92) contrast(1.03); transition: filter 0.3s; }
+.photo-item img:hover { filter: saturate(1) contrast(1.05); }
 .photo-placeholder { aspect-ratio: 4/3; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; }
 .photo-placeholder span { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
 .photo-caption { padding: 9px 12px; font-size: 10px; color: var(--muted); letter-spacing: 0.06em; font-style: italic; background: var(--cream-dark); border-top: 1px solid var(--border-light); }
@@ -234,28 +236,28 @@ h1 em { font-style: italic; color: var(--gold-light); }
     </div>
     <div class="photo-grid">
       <div class="photo-item">
-        <div class="photo-placeholder"><span>Kitchen — Before</span></div>
+        <img src="images/kitchen-before.jpg" alt="Kitchen before works commenced">
         <div class="photo-caption">Kitchen — condition before works commenced</div>
       </div>
       <div class="photo-item">
-        <div class="photo-placeholder"><span>Kitchen — Rip-Out</span></div>
-        <div class="photo-caption">Kitchen — stripped and ready for installation</div>
-      </div>
-      <div class="photo-item">
-        <div class="photo-placeholder"><span>Bathroom — Before</span></div>
-        <div class="photo-caption">Bathroom — condition before works commenced</div>
-      </div>
-      <div class="photo-item">
-        <div class="photo-placeholder"><span>Bathroom — Rip-Out</span></div>
+        <img src="images/bathroom-strip.jpg" alt="Bathroom after strip-out">
         <div class="photo-caption">Bathroom — following full strip-out</div>
       </div>
       <div class="photo-item">
-        <div class="photo-placeholder"><span>Electrical Works</span></div>
-        <div class="photo-caption">First-fix electrical works in progress</div>
+        <img src="images/bathroom-tiling.jpg" alt="Bathroom floor tiling in progress">
+        <div class="photo-caption">Bathroom — floor tiling in progress</div>
       </div>
       <div class="photo-item">
-        <div class="photo-placeholder"><span>Site Overview</span></div>
+        <img src="images/electrical-works.jpg" alt="Electrical first-fix works">
+        <div class="photo-caption">Electrical first-fix works in progress</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/site-overview.jpg" alt="General site overview">
         <div class="photo-caption">General site overview</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/window-ledge.jpg" alt="Window and ledge works">
+        <div class="photo-caption">Window &amp; ledge — works in progress</div>
       </div>
     </div>
   </div>
@@ -310,7 +312,7 @@ h1 em { font-style: italic; color: var(--gold-light); }
         <div class="signoff-role">Site Manager &nbsp;·&nbsp; ASA Electrical Ltd</div>
         <div class="signoff-details">
           Mob: <a href="tel:07886546386">0788 654 6386</a><br>
-          Email: <a href="mailto:asaelectrical@me.com">asaelectrical@me.com</a>
+          Email: <a href="/cdn-cgi/l/email-protection#a4c5d7c5c1c8c1c7d0d6cdc7c5c8e4c9c18ac7cbc9"><span class="__cf_email__" data-cfemail="0f6e7c6e6a636a6c7b7d666c6e634f626a216c6062">[email&#160;protected]</span></a>
         </div>
       </div>
     </div>
@@ -319,9 +321,4 @@ h1 em { font-style: italic; color: var(--gold-light); }
 
 <footer class="footer">
   <div class="footer-inner">
-    <span>ASA Electrical Ltd</span> &nbsp;·&nbsp; Flat 117, Nell Gwynn House &nbsp;·&nbsp; Renovation Progress
-  </div>
-</footer>
-
-</body>
-</html>
+    <span>AS
