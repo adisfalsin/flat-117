@@ -38,7 +38,10 @@ body {
 .topbar-nav a { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9A948C; text-decoration: none; transition: color 0.2s; }
 .topbar-nav a:hover, .topbar-nav a.active { color: var(--gold-light); }
 .hero { background: var(--charcoal); padding: 80px 48px 72px; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(154,123,60,0.18) 0%, transparent 60%); pointer-events: none; }
+.hero-building-img { position: absolute; inset: 0; z-index: 0; }
+.hero-building-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: saturate(0.7) brightness(0.45); }
+.hero-building-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(154,123,60,0.35) 0%, rgba(28,28,28,0.6) 60%); }
+.hero::before { display: none; }
 .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
 .hero-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
 .hero-eyebrow::after { content: ''; flex-grow: 1; max-width: 80px; height: 1px; background: var(--gold-rule); }
@@ -133,6 +136,10 @@ h1 em { font-style: italic; color: var(--gold-light); }
 </header>
 
 <section class="hero">
+  <div class="hero-building-img">
+    <img src="images/nell-gwynn-house.jpg" alt="Nell Gwynn House, Chelsea">
+    <div class="hero-building-overlay"></div>
+  </div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Renovation Works &nbsp;·&nbsp; Live Project</div>
     <h1>Flat 117<br><em>Nell Gwynn House</em></h1>
@@ -156,7 +163,7 @@ h1 em { font-style: italic; color: var(--gold-light); }
       </div>
       <div class="meta-block">
         <div class="meta-label">Last Updated</div>
-        <div class="meta-value">March 2026</div>
+        <div class="meta-value">12 March 2026</div>
       </div>
     </div>
   </div>
@@ -185,22 +192,22 @@ h1 em { font-style: italic; color: var(--gold-light); }
     <div class="status-cell">
       <div class="status-dot dot-amber"></div>
       <div>
-        <span class="status-label">Current Phase</span>
-        <span class="status-value">Installation</span>
-      </div>
-    </div>
-    <div class="status-cell">
-      <div class="status-dot dot-blue"></div>
-      <div>
-        <span class="status-label">Next Milestone</span>
-        <span class="status-value">Bathroom Tiling</span>
+        <span class="status-label">Kitchen Units</span>
+        <span class="status-value">Being Fitted</span>
       </div>
     </div>
     <div class="status-cell">
       <div class="status-dot dot-amber"></div>
       <div>
-        <span class="status-label">Client Actions</span>
-        <span class="status-value">2 Required</span>
+        <span class="status-label">Bathroom Tiling</span>
+        <span class="status-value">In Progress</span>
+      </div>
+    </div>
+    <div class="status-cell">
+      <div class="status-dot dot-amber"></div>
+      <div>
+        <span class="status-label">Next Milestone</span>
+        <span class="status-value">Decoration</span>
       </div>
     </div>
   </div>
@@ -236,28 +243,28 @@ h1 em { font-style: italic; color: var(--gold-light); }
     </div>
     <div class="photo-grid">
       <div class="photo-item">
+        <img src="images/kitchen-progress-12mar-d.jpg" alt="Kitchen wall units with gloss doors fitted">
+        <div class="photo-caption">Kitchen — Clerkenwell White Gloss wall units fitted, 12 March</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/kitchen-progress-12mar-c.jpg" alt="Kitchen installation in progress">
+        <div class="photo-caption">Kitchen — wall unit installation in progress, 12 March</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/bathroom-progress-12mar.jpg" alt="Bathroom wall tiling in progress">
+        <div class="photo-caption">Bathroom — wall tiling underway, 12 March</div>
+      </div>
+      <div class="photo-item">
+        <img src="images/kitchen-progress-12mar-b.jpg" alt="Kitchen units being fitted">
+        <div class="photo-caption">Kitchen — carcasses installed, doors being hung</div>
+      </div>
+      <div class="photo-item">
         <img src="images/kitchen-before.jpg" alt="Kitchen before works commenced">
         <div class="photo-caption">Kitchen — condition before works commenced</div>
       </div>
       <div class="photo-item">
         <img src="images/bathroom-strip.jpg" alt="Bathroom after strip-out">
         <div class="photo-caption">Bathroom — following full strip-out</div>
-      </div>
-      <div class="photo-item">
-        <img src="images/bathroom-tiling.jpg" alt="Bathroom floor tiling in progress">
-        <div class="photo-caption">Bathroom — floor tiling in progress</div>
-      </div>
-      <div class="photo-item">
-        <img src="images/electrical-works.jpg" alt="Electrical first-fix works">
-        <div class="photo-caption">Electrical first-fix works in progress</div>
-      </div>
-      <div class="photo-item">
-        <img src="images/site-overview.jpg" alt="General site overview">
-        <div class="photo-caption">General site overview</div>
-      </div>
-      <div class="photo-item">
-        <img src="images/window-ledge.jpg" alt="Window and ledge works">
-        <div class="photo-caption">Window &amp; ledge — works in progress</div>
       </div>
     </div>
   </div>
@@ -271,6 +278,20 @@ h1 em { font-style: italic; color: var(--gold-light); }
       <div class="activity-item">
         <div class="activity-dot dot-green"></div>
         <div>
+          <div class="activity-date">12 March 2026</div>
+          <div class="activity-text">Kitchen wall unit carcasses fitted. Howdens Clerkenwell White Gloss doors being hung. Installation progressing well.</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot dot-green"></div>
+        <div>
+          <div class="activity-date">12 March 2026</div>
+          <div class="activity-text">Bathroom wall tiling underway. Regal Grey Matt tiles being laid on back and side walls. Good progress on site today.</div>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-dot dot-green"></div>
+        <div>
           <div class="activity-date">March 2026</div>
           <div class="activity-text">Rip-out phase fully completed. Kitchen and bathroom stripped to shell. All debris cleared from site.</div>
         </div>
@@ -279,21 +300,7 @@ h1 em { font-style: italic; color: var(--gold-light); }
         <div class="activity-dot dot-green"></div>
         <div>
           <div class="activity-date">March 2026</div>
-          <div class="activity-text">Electrical first-fix investigations completed. TV aerial cable renewed to both TV positions. Cabling assessed throughout.</div>
-        </div>
-      </div>
-      <div class="activity-item">
-        <div class="activity-dot dot-amber"></div>
-        <div>
-          <div class="activity-date">Awaiting Decision</div>
-          <div class="activity-text">Kitchen finish selection presented — Howdens Clerkenwell White, gloss or matt. Client decision outstanding; critical path item.</div>
-        </div>
-      </div>
-      <div class="activity-item">
-        <div class="activity-dot dot-amber"></div>
-        <div>
-          <div class="activity-date">Awaiting Approval</div>
-          <div class="activity-text">Bathroom tile specification confirmed — Regal Grey Matt 60×29.9cm, SKU 752966, Topps Tiles, approx. £958. Order approval pending.</div>
+          <div class="activity-text">Electrical first-fix completed. TV aerial cable renewed to both TV positions. Kitchen finish confirmed as Howdens Clerkenwell White Gloss. Tile order approved.</div>
         </div>
       </div>
     </div>

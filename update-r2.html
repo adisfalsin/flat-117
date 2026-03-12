@@ -32,7 +32,10 @@ body { background: var(--warm-white); color: var(--charcoal); font-family: 'Mont
 .topbar-nav a { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9A948C; text-decoration: none; transition: color 0.2s; }
 .topbar-nav a:hover, .topbar-nav a.active { color: var(--gold-light); }
 .hero { background: var(--charcoal); padding: 80px 48px 72px; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(154,123,60,0.18) 0%, transparent 60%); pointer-events: none; }
+.hero-building-img { position: absolute; inset: 0; z-index: 0; }
+.hero-building-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: saturate(0.7) brightness(0.45); }
+.hero-building-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(154,123,60,0.35) 0%, rgba(28,28,28,0.6) 60%); }
+.hero::before { display: none; }
 .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
 .hero-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
 .hero-eyebrow::after { content: ''; flex-grow: 1; max-width: 80px; height: 1px; background: var(--gold-rule); }
@@ -139,14 +142,18 @@ h1 em { font-style: italic; color: var(--gold-light); }
 </header>
 
 <section class="hero">
+  <div class="hero-building-img">
+    <img src="images/nell-gwynn-house.jpg" alt="Nell Gwynn House, Chelsea">
+    <div class="hero-building-overlay"></div>
+  </div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">Site Progress Report &nbsp;·&nbsp; Update R2</div>
+    <div class="hero-eyebrow">Site Progress Report &nbsp;·&nbsp; Update R2 &nbsp;·&nbsp; 12 March 2026</div>
     <h1>Flat 117<br><em>Nell Gwynn House</em></h1>
     <div class="hero-address">Sloane Avenue &nbsp;·&nbsp; Chelsea &nbsp;·&nbsp; London SW3</div>
     <div class="hero-meta">
       <div class="meta-block">
         <div class="meta-label">Date Issued</div>
-        <div class="meta-value">March 2026</div>
+        <div class="meta-value">12 March 2026</div>
       </div>
       <div class="meta-block">
         <div class="meta-label">Client</div>
@@ -173,44 +180,71 @@ h1 em { font-style: italic; color: var(--gold-light); }
   <div class="salutation-inner">
     <div class="salutation-label">Dear Mrs Burlingame</div>
     <div class="salutation-text">
-      <p>Please find below my latest update from site at Flat 117. This report covers all works completed since the previous update, the current position on all active items, and the actions I require from you in order to keep the programme moving without delay.</p>
-      <p>Two client decisions remain outstanding and are on the critical path. I would be grateful for your response at your earliest convenience.</p>
+      <p>Please find below my update from site at Flat 117 for 12 March 2026. Kitchen wall unit installation is actively underway, with carcasses fitted and doors being hung today. Bathroom wall tiling has also commenced and is progressing well.</p>
+      <p>There are no outstanding client actions at this stage. Works are proceeding as planned.</p>
     </div>
   </div>
 </div>
 
 <div class="main">
 
-  <!-- 01 WORKS COMPLETED -->
+  <!-- 01 WORKS IN PROGRESS — 12 MARCH 2026 -->
   <div class="section">
     <div class="section-heading">
       <span class="section-num">01</span>
-      <span class="section-title">Works Completed Since Last Update</span>
+      <span class="section-title">Works in Progress — 12 March 2026</span>
     </div>
 
     <div class="article">
       <div class="article-label">
-        <div class="article-label-title">Rip-Out — Kitchen &amp; Bathroom</div>
-        <span class="article-label-tag tag-ok">Complete</span>
+        <div class="article-label-title">Kitchen Unit Installation</div>
+        <span class="article-label-tag tag-ok">Underway Today</span>
       </div>
       <div class="article-body">
-        <p>Full rip-out of both kitchen and bathroom has been completed. All existing units, appliances, bathroom suite, tiles and associated fixtures have been removed and cleared. Both rooms are now stripped back to shell and ready to receive new works.</p>
+        <p>Kitchen wall unit installation commenced and is progressing well on site today. Carcasses have been fixed in position and doors are being hung. The Howdens Clerkenwell White Gloss finish is looking excellent in the space. Lower unit installation and worktops will follow as the programme progresses.</p>
         <div class="checklist">
-          <div class="check-item"><div class="check-icon check-done">✓</div>Kitchen units and appliances removed</div>
-          <div class="check-item"><div class="check-icon check-done">✓</div>Bathroom suite, tiles and finishes stripped</div>
-          <div class="check-item"><div class="check-icon check-done">✓</div>All debris cleared from site</div>
-          <div class="check-item"><div class="check-icon check-done">✓</div>Surfaces inspected and assessed</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Wall unit carcasses fixed and levelled</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Corner units fitted</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Gloss doors being hung today</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Lower units and worktops — to follow</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Electrical second-fix to kitchen — to follow</div>
         </div>
       </div>
     </div>
 
     <div class="article">
       <div class="article-label">
-        <div class="article-label-title">Electrical First-Fix &amp; Aerial</div>
+        <div class="article-label-title">Bathroom Wall Tiling</div>
+        <span class="article-label-tag tag-ok">Underway Today</span>
+      </div>
+      <div class="article-body">
+        <p>Bathroom wall tiling has commenced using the agreed Regal Grey Matt 60×29.9cm tiles (SKU 752966, Topps Tiles). The back wall and side wall tiling are progressing well. Floor tiling was completed ahead of wall tiling. Suite installation will follow once tiling is complete throughout.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>Floor tiling complete</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Back wall tiling underway</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Remaining walls to be tiled</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Grouting and sealing to follow</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Bathroom suite installation to follow</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 02 PREVIOUSLY COMPLETED -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">02</span>
+      <span class="section-title">Previously Completed Works</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Rip-Out &amp; Electrical First-Fix</div>
         <span class="article-label-tag tag-ok">Complete</span>
       </div>
       <div class="article-body">
-        <p>Electrical investigations have been completed throughout. Both TV socket positions were tested — neither was found to be live. On lifting the bedroom floor, the aerial cable was found to have been cut at some point in the past. A new high-grade coaxial cable has been run from the entrance hatch to both TV positions, restoring signal to the living room and bedroom.</p>
+        <p>Full rip-out of kitchen and bathroom completed. Electrical investigations throughout — new high-grade aerial cable run to both TV positions. All debris cleared from site. Both spaces handed over to installation and tiling teams.</p>
         <div class="charge-box">
           <div class="charge-label">TV aerial cable renewal — new high-grade cable, full run to both TV positions, labour &amp; materials</div>
           <div>
@@ -221,84 +255,39 @@ h1 em { font-style: italic; color: var(--gold-light); }
       </div>
     </div>
 
-    <div class="article">
-      <div class="article-label">
-        <div class="article-label-title">Specification &amp; Procurement</div>
-        <span class="article-label-tag tag-ok">Complete</span>
-      </div>
-      <div class="article-body">
-        <p>Kitchen finish options have been compiled and presented to you — Howdens Clerkenwell White in both gloss and matt. Bathroom tile specification has been confirmed as Regal Grey Matt 60×29.9cm (SKU 752966, Topps Tiles) for both floor and wall areas.</p>
-        <div class="notice">
-          <strong>Tile Estimate</strong> — Floor approx. 4.41 m², walls approx. 10.12 m², total with 15% wastage approx. 14.53 m². Estimated cost: <strong>approx. £958.49</strong>. To be confirmed at checkout.
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- 02 SCOPE CHANGES -->
-  <div class="section">
-    <div class="section-heading">
-      <span class="section-num">02</span>
-      <span class="section-title">Scope Changes — For Your Record</span>
-    </div>
-
-    <div class="article">
-      <div class="article-label">
-        <div class="article-label-title">Wall Unit Heights</div>
-        <span class="article-label-tag tag-warn">Scope Change</span>
-      </div>
-      <div class="article-body">
-        <p>Wall units have been revised from 900mm to 720mm height within the Howdens Clerkenwell White range. This remains a meaningful improvement on the original 600mm units and does not affect the visual outcome of the kitchen.</p>
-      </div>
-    </div>
-
-    <div class="article">
-      <div class="article-label">
-        <div class="article-label-title">Cooker Hood</div>
-        <span class="article-label-tag tag-warn">Scope Change</span>
-      </div>
-      <div class="article-body">
-        <p>The chimney-style cooker hood has been replaced with a built-in integrated hood. This avoids the need for boxing works to the kitchen flank wall and delivers a cleaner result consistent with the overall specification.</p>
-      </div>
-    </div>
-
-    <div class="article">
-      <div class="article-label">
-        <div class="article-label-title">Bulkhead</div>
-        <span class="article-label-tag tag-warn">Scope Change</span>
-      </div>
-      <div class="article-body">
-        <p>The bulkhead cannot be removed within the agreed programme. On opening the void, exposed loose cabling was discovered inside along with unfinished surfaces. The bulkhead will be retained and made good as part of the decoration works.</p>
-        <div class="notice notice-warn">
-          <strong>Note</strong> — Exposed cabling found inside the bulkhead void has been made safe as part of first-fix works.
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- 03 PHOTOGRAPHY -->
+  <!-- 03 PHOTOGRAPHY — 12 MARCH 2026 -->
   <div class="section">
     <div class="section-heading">
       <span class="section-num">03</span>
-      <span class="section-title">Site Photography</span>
+      <span class="section-title">Site Photography — 12 March 2026</span>
     </div>
 
     <div class="article">
       <div class="article-label">
-        <div class="article-label-title">Kitchen &amp; Bathroom</div>
-        <span class="article-label-tag">Rip-Out Complete</span>
+        <div class="article-label-title">Kitchen Installation</div>
+        <span class="article-label-tag tag-ok">Today on Site</span>
       </div>
       <div class="article-body">
         <div class="photo-row r2">
           <div class="photo-card">
-            <img src="images/kitchen-before.jpg" alt="Kitchen before works">
-            <div class="photo-caption">Kitchen — condition before works commenced</div>
+            <img src="images/kitchen-progress-12mar-d.jpg" alt="Kitchen gloss wall units fitted">
+            <div class="photo-caption">Clerkenwell White Gloss wall units — doors hung, 12 March</div>
           </div>
           <div class="photo-card">
-            <img src="images/bathroom-strip.jpg" alt="Bathroom after strip-out">
-            <div class="photo-caption">Bathroom — following full strip-out</div>
+            <img src="images/kitchen-progress-12mar-c.jpg" alt="Kitchen installation team at work">
+            <div class="photo-caption">Installation team fitting wall units on site</div>
+          </div>
+        </div>
+        <div class="photo-row r2">
+          <div class="photo-card">
+            <img src="images/kitchen-progress-12mar-b.jpg" alt="Kitchen carcasses installed">
+            <div class="photo-caption">Wall unit carcasses secured — doors being hung</div>
+          </div>
+          <div class="photo-card">
+            <img src="images/kitchen-progress-12mar-a.jpg" alt="Kitchen units close detail">
+            <div class="photo-caption">Detail — wall unit alignment and fitting</div>
           </div>
         </div>
       </div>
@@ -306,18 +295,18 @@ h1 em { font-style: italic; color: var(--gold-light); }
 
     <div class="article">
       <div class="article-label">
-        <div class="article-label-title">Electrical Works</div>
-        <span class="article-label-tag tag-ok">First-Fix Complete</span>
+        <div class="article-label-title">Bathroom Tiling</div>
+        <span class="article-label-tag tag-ok">Today on Site</span>
       </div>
       <div class="article-body">
         <div class="photo-row r2">
           <div class="photo-card">
-            <img src="images/electrical-works.jpg" alt="Electrical first-fix works">
-            <div class="photo-caption">Electrical first-fix — new aerial cable run to both TV positions</div>
+            <img src="images/bathroom-progress-12mar.jpg" alt="Bathroom wall tiling in progress">
+            <div class="photo-caption">Regal Grey Matt wall tiling underway — bath position set, 12 March</div>
           </div>
           <div class="photo-card">
-            <img src="images/site-overview.jpg" alt="General site overview">
-            <div class="photo-caption">General site overview</div>
+            <img src="images/bathroom-strip.jpg" alt="Bathroom after strip-out">
+            <div class="photo-caption">Bathroom — for reference, following full strip-out</div>
           </div>
         </div>
       </div>
@@ -325,39 +314,26 @@ h1 em { font-style: italic; color: var(--gold-light); }
 
   </div>
 
-  <!-- 04 OUTSTANDING / NEXT STEPS -->
+  <!-- 04 NEXT STEPS -->
   <div class="section">
     <div class="section-heading">
       <span class="section-num">04</span>
-      <span class="section-title">Outstanding Items &amp; Next Steps</span>
+      <span class="section-title">Next Steps</span>
     </div>
 
     <div class="article">
       <div class="article-label">
-        <div class="article-label-title">Outstanding Items</div>
-        <span class="article-label-tag tag-warn">Action Required</span>
-      </div>
-      <div class="article-body">
-        <div class="checklist">
-          <div class="check-item"><div class="check-icon check-pending">○</div>Kitchen door finish decision (gloss or matt) — critical path</div>
-          <div class="check-item"><div class="check-icon check-pending">○</div>Bathroom tile order approval — approx. £958.49, SKU 752966</div>
-          <div class="check-item"><div class="check-icon check-pending">○</div>Redundant TV socket outlets — confirm removal or retention</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="article">
-      <div class="article-label">
-        <div class="article-label-title">Planned Next Steps</div>
+        <div class="article-label-title">Programme — Coming Up</div>
         <span class="article-label-tag tag-info">Programme</span>
       </div>
       <div class="article-body">
         <div class="checklist">
-          <div class="check-item"><div class="check-icon check-pending">→</div>Kitchen unit installation — subject to client finish decision</div>
-          <div class="check-item"><div class="check-icon check-pending">→</div>Bathroom tiling — floor and walls — subject to tile order approval</div>
-          <div class="check-item"><div class="check-icon check-pending">→</div>Bathroom suite installation following tiling completion</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Kitchen lower unit installation and worktops</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Complete bathroom wall tiling, grouting and sealing</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Bathroom suite installation</div>
           <div class="check-item"><div class="check-icon check-pending">→</div>Electrical second-fix throughout</div>
           <div class="check-item"><div class="check-icon check-pending">→</div>Decoration — Dulux Easycare Timeless throughout</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Bulkhead remediation quotation to be submitted</div>
           <div class="check-item"><div class="check-icon check-pending">→</div>Window and ledge repairs. Snagging and handover.</div>
         </div>
       </div>
@@ -367,18 +343,14 @@ h1 em { font-style: italic; color: var(--gold-light); }
 
 </div><!-- /main -->
 
-<!-- ACTIONS BAND -->
+<!-- NO CLIENT ACTIONS REQUIRED -->
 <div class="actions-band">
   <div class="actions-inner">
-    <div class="band-heading">Actions Required from Client</div>
+    <div class="band-heading">Works Are Proceeding</div>
     <div class="actions-grid">
       <div class="action-item">
-        <span class="action-num">1</span>
-        <div class="action-text"><strong>Kitchen Door Finish</strong>Please confirm your preferred finish for the Howdens Clerkenwell White kitchen doors — gloss or matt. This is a critical-path decision and installation cannot proceed without it.</div>
-      </div>
-      <div class="action-item">
-        <span class="action-num">2</span>
-        <div class="action-text"><strong>Bathroom Tile Order</strong>Please approve the Regal Grey Matt tile order (SKU 752966, Topps Tiles). Estimated cost approx. £958.49 including 15% wastage. Prices subject to confirmation at checkout.</div>
+        <span class="action-num">✓</span>
+        <div class="action-text"><strong>No Actions Required at This Stage</strong>All previously outstanding decisions have been confirmed. Kitchen installation and bathroom tiling are actively underway. I will be in touch as further decisions are required.</div>
       </div>
     </div>
   </div>

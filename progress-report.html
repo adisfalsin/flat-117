@@ -32,7 +32,10 @@ body { background: var(--warm-white); color: var(--charcoal); font-family: 'Mont
 .topbar-nav a { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9A948C; text-decoration: none; transition: color 0.2s; }
 .topbar-nav a:hover, .topbar-nav a.active { color: var(--gold-light); }
 .hero { background: var(--charcoal); padding: 80px 48px 72px; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(154,123,60,0.18) 0%, transparent 60%); pointer-events: none; }
+.hero-building-img { position: absolute; inset: 0; z-index: 0; }
+.hero-building-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: saturate(0.7) brightness(0.45); }
+.hero-building-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(154,123,60,0.35) 0%, rgba(28,28,28,0.6) 60%); }
+.hero::before { display: none; }
 .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
 .hero-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
 .hero-eyebrow::after { content: ''; flex-grow: 1; max-width: 80px; height: 1px; background: var(--gold-rule); }
@@ -150,6 +153,10 @@ h1 em { font-style: italic; color: var(--gold-light); }
 </header>
 
 <section class="hero">
+  <div class="hero-building-img">
+    <img src="images/nell-gwynn-house.jpg" alt="Nell Gwynn House, Chelsea">
+    <div class="hero-building-overlay"></div>
+  </div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Progress Report &nbsp;·&nbsp; Full Record</div>
     <h1>Flat 117<br><em>Nell Gwynn House</em></h1>
@@ -173,7 +180,7 @@ h1 em { font-style: italic; color: var(--gold-light); }
       </div>
       <div class="meta-block">
         <div class="meta-label">Report Date</div>
-        <div class="meta-value">March 2026</div>
+        <div class="meta-value">12 March 2026</div>
       </div>
     </div>
   </div>
@@ -215,15 +222,15 @@ h1 em { font-style: italic; color: var(--gold-light); }
           </thead>
           <tbody>
             <tr><td>Kitchen — Strip-Out</td><td>Full removal of existing kitchen units, appliances and finishes</td><td><span class="pill pill-done">Complete</span></td></tr>
-            <tr><td>Kitchen — Installation</td><td>Howdens Clerkenwell White — finish selection pending</td><td><span class="pill pill-active">In Progress</span></td></tr>
+            <tr><td>Kitchen — Installation</td><td>Howdens Clerkenwell White Gloss — wall units fitted 12 March, doors being hung</td><td><span class="pill pill-active">In Progress</span></td></tr>
             <tr><td>Bathroom — Strip-Out</td><td>Full removal of existing bathroom suite, tiles and finishes</td><td><span class="pill pill-done">Complete</span></td></tr>
-            <tr><td>Bathroom — Tiling</td><td>Regal Grey Matt, 60×29.9cm, SKU 752966 (Topps Tiles) — floor &amp; walls</td><td><span class="pill pill-pending">Pending Approval</span></td></tr>
+            <tr><td>Bathroom — Tiling</td><td>Regal Grey Matt, 60×29.9cm, SKU 752966 (Topps Tiles) — wall tiling underway 12 March</td><td><span class="pill pill-active">In Progress</span></td></tr>
             <tr><td>Electrical — First Fix</td><td>Cabling investigations, TV aerial renewal, socket assessment</td><td><span class="pill pill-done">Complete</span></td></tr>
             <tr><td>Cooker Hood</td><td>Chimney-style replaced with built-in integrated hood</td><td><span class="pill pill-changed">Scope Change</span></td></tr>
-            <tr><td>Wall Units</td><td>Height revised from 900mm to 720mm (improvement on original 600mm)</td><td><span class="pill pill-changed">Scope Change</span></td></tr>
-            <tr><td>Chimney Breast</td><td>Exposed feature undeliverable within agreed programme</td><td><span class="pill pill-changed">Scope Change</span></td></tr>
-            <tr><td>Bulkhead</td><td>Cannot be removed — exposed loose cabling found inside void</td><td><span class="pill pill-changed">Scope Change</span></td></tr>
-            <tr><td>Decoration</td><td>Dulux Easycare Timeless throughout</td><td><span class="pill pill-pending">Pending</span></td></tr>
+            <tr><td>Wall Units</td><td>Height confirmed at 720mm — agreed improvement on original 600mm</td><td><span class="pill pill-done">Confirmed</span></td></tr>
+            <tr><td>Chimney Breast</td><td>Exposed feature undeliverable within agreed programme — agreed</td><td><span class="pill pill-changed">Scope Change</span></td></tr>
+            <tr><td>Bulkhead</td><td>Cannot be removed — quotation for remediation to be submitted</td><td><span class="pill pill-changed">Scope Change</span></td></tr>
+            <tr><td>Decoration</td><td>Dulux Easycare Timeless throughout — commencing soon</td><td><span class="pill pill-active">Starting Soon</span></td></tr>
             <tr><td>Window &amp; Ledge</td><td>Repair and make good</td><td><span class="pill pill-pending">Pending</span></td></tr>
           </tbody>
         </table>
@@ -264,10 +271,7 @@ h1 em { font-style: italic; color: var(--gold-light); }
         <span class="article-label-tag tag-ok">Complete</span>
       </div>
       <div class="article-body">
-        <p>Kitchen finish options presented to client — Howdens Clerkenwell White in gloss and matt finishes. Bathroom tile specification confirmed as Regal Grey Matt 60×29.9cm (SKU 752966, Topps Tiles). Surface area calculations completed: floor approx. 4.41 m², walls approx. 10.12 m², total with 15% wastage allowance approx. 14.53 m².</p>
-        <div class="notice">
-          <strong>Tile Estimate</strong> — Estimated tile cost including 15% wastage: approx. £958.49. Prices to be confirmed at point of order. Client approval required before proceeding.
-        </div>
+        <p>Kitchen finish confirmed as Howdens Clerkenwell White Gloss. Wall unit carcasses fitted 12 March 2026 — doors being hung. Bathroom tile specification confirmed as Regal Grey Matt 60×29.9cm (SKU 752966, Topps Tiles). Tile order approved and wall tiling underway as of 12 March 2026.</p>
       </div>
     </div>
 
@@ -308,15 +312,15 @@ h1 em { font-style: italic; color: var(--gold-light); }
             <div>
               <div class="tl-phase">Phase 3 — In Progress</div>
               <div class="tl-title">Kitchen Installation</div>
-              <div class="tl-desc">Howdens Clerkenwell White installation — awaiting client finish decision before proceeding.</div>
+              <div class="tl-desc">Howdens Clerkenwell White Gloss — wall unit carcasses fitted 12 March. Doors being hung. Lower units and worktops to follow.</div>
             </div>
           </div>
           <div class="tl-item">
-            <div class="tl-marker"><div class="tl-dot pending"></div></div>
+            <div class="tl-marker"><div class="tl-dot active"></div></div>
             <div>
-              <div class="tl-phase">Phase 4 — Pending</div>
+              <div class="tl-phase">Phase 4 — In Progress</div>
               <div class="tl-title">Bathroom Tiling &amp; Suite</div>
-              <div class="tl-desc">Regal Grey Matt tiling — floor and walls. New bathroom suite installation.</div>
+              <div class="tl-desc">Regal Grey Matt wall tiling underway as of 12 March. Floor tiling complete. New bathroom suite to follow on completion of tiling.</div>
             </div>
           </div>
           <div class="tl-item">
@@ -342,30 +346,30 @@ h1 em { font-style: italic; color: var(--gold-light); }
     <div class="article">
       <div class="article-label">
         <div class="article-label-title">Wall Unit Heights</div>
-        <span class="article-label-tag tag-warn">Scope Change</span>
+        <span class="article-label-tag tag-ok">Confirmed</span>
       </div>
       <div class="article-body">
-        <p>The originally specified wall unit height of 900mm cannot be supplied within the agreed Howdens Clerkenwell White range. Units have been revised to 720mm height. This remains a significant improvement on the original 600mm units in situ and does not affect the overall aesthetic of the installation.</p>
+        <p>Wall units have been confirmed at 720mm height within the Howdens Clerkenwell White Gloss range. This is a significant improvement on the original 600mm units and the revised height has been agreed and accepted.</p>
       </div>
     </div>
 
     <div class="article">
       <div class="article-label">
         <div class="article-label-title">Cooker Hood</div>
-        <span class="article-label-tag tag-warn">Scope Change</span>
+        <span class="article-label-tag tag-ok">Confirmed</span>
       </div>
       <div class="article-body">
-        <p>The chimney-style cooker hood originally requested has been replaced with a built-in integrated hood. This avoids the need for boxing works to the kitchen flank wall, simplifies the installation programme, and delivers a cleaner kitchen finish in keeping with the overall specification.</p>
+        <p>The chimney-style cooker hood has been replaced with a built-in integrated hood. This has been agreed and accepted. The change avoids boxing works to the kitchen flank wall and delivers a cleaner result.</p>
       </div>
     </div>
 
     <div class="article">
       <div class="article-label">
         <div class="article-label-title">Exposed Chimney Breast</div>
-        <span class="article-label-tag tag-warn">Scope Change</span>
+        <span class="article-label-tag tag-ok">Confirmed</span>
       </div>
       <div class="article-body">
-        <p>The exposed chimney breast feature cannot be delivered within the agreed programme. Following investigation, the works required to achieve a satisfactory finish are outside the scope and timescale of the current contract. This item has been removed from the current programme.</p>
+        <p>The exposed chimney breast feature cannot be delivered within the agreed programme and has been removed from the current scope. This has been agreed and accepted.</p>
       </div>
     </div>
 
@@ -375,9 +379,9 @@ h1 em { font-style: italic; color: var(--gold-light); }
         <span class="article-label-tag tag-warn">Scope Change</span>
       </div>
       <div class="article-body">
-        <p>The bulkhead cannot be removed within the agreed programme. On opening the void, exposed loose cabling was found running through the structure, with unfinished surfaces inside. Removal would require remediation works beyond the current scope. The bulkhead will be retained and made good.</p>
+        <p>The bulkhead cannot be removed within the agreed programme. On opening the void, exposed loose cabling was found running through the structure with unfinished surfaces inside. The bulkhead will be retained and made good. A separate quotation for the remediation works will be submitted shortly.</p>
         <div class="notice notice-warn">
-          <strong>Note</strong> — The exposed cabling found inside the bulkhead void has been made safe as part of first-fix works. No remediation to the bulkhead structure is planned at this stage.
+          <strong>Note</strong> — The exposed cabling found inside the bulkhead void has been made safe as part of first-fix works. A quotation for full remediation will follow.
         </div>
       </div>
     </div>
@@ -393,18 +397,28 @@ h1 em { font-style: italic; color: var(--gold-light); }
 
     <div class="article">
       <div class="article-label">
-        <div class="article-label-title">Kitchen</div>
-        <span class="article-label-tag">Before &amp; After Rip-Out</span>
+        <div class="article-label-title">Kitchen — 12 March 2026</div>
+        <span class="article-label-tag tag-ok">Installation Underway</span>
       </div>
       <div class="article-body">
         <div class="photo-row r2">
           <div class="photo-card">
-            <img src="images/kitchen-before.jpg" alt="Kitchen before works commenced">
-            <div class="photo-caption">Kitchen — condition before works commenced</div>
+            <img src="images/kitchen-progress-12mar-d.jpg" alt="Kitchen gloss wall units fitted">
+            <div class="photo-caption">Wall units fitted — Clerkenwell White Gloss doors hung</div>
           </div>
           <div class="photo-card">
-            <img src="images/site-overview.jpg" alt="Site overview during works">
-            <div class="photo-caption">General site overview during works</div>
+            <img src="images/kitchen-progress-12mar-c.jpg" alt="Kitchen installation team at work">
+            <div class="photo-caption">Installation team fitting wall units, 12 March</div>
+          </div>
+        </div>
+        <div class="photo-row r2">
+          <div class="photo-card">
+            <img src="images/kitchen-progress-12mar-b.jpg" alt="Kitchen carcasses installed">
+            <div class="photo-caption">Wall unit carcasses installed, doors being hung</div>
+          </div>
+          <div class="photo-card">
+            <img src="images/kitchen-before.jpg" alt="Kitchen before works commenced">
+            <div class="photo-caption">Kitchen — condition before works commenced</div>
           </div>
         </div>
       </div>
@@ -412,18 +426,18 @@ h1 em { font-style: italic; color: var(--gold-light); }
 
     <div class="article">
       <div class="article-label">
-        <div class="article-label-title">Bathroom</div>
-        <span class="article-label-tag">Before &amp; After Rip-Out</span>
+        <div class="article-label-title">Bathroom — 12 March 2026</div>
+        <span class="article-label-tag tag-ok">Tiling Underway</span>
       </div>
       <div class="article-body">
         <div class="photo-row r2">
           <div class="photo-card">
-            <img src="images/bathroom-strip.jpg" alt="Bathroom after strip-out">
-            <div class="photo-caption">Bathroom — following full strip-out</div>
+            <img src="images/bathroom-progress-12mar.jpg" alt="Bathroom wall tiling in progress">
+            <div class="photo-caption">Bathroom — Regal Grey Matt wall tiling underway, 12 March</div>
           </div>
           <div class="photo-card">
-            <img src="images/bathroom-tiling.jpg" alt="Bathroom floor tiling in progress">
-            <div class="photo-caption">Bathroom — floor tiling in progress</div>
+            <img src="images/bathroom-strip.jpg" alt="Bathroom after strip-out">
+            <div class="photo-caption">Bathroom — following full strip-out (before tiling)</div>
           </div>
         </div>
       </div>
@@ -463,7 +477,7 @@ h1 em { font-style: italic; color: var(--gold-light); }
       </div>
       <div class="action-item">
         <span class="action-num">2</span>
-        <div class="action-text"><strong>Bathroom Tile Order</strong>Please confirm approval to proceed with the Regal Grey Matt tile order (SKU 752966, Topps Tiles). Estimated cost approx. £958.49 including 15% wastage. Prices subject to confirmation at checkout.</div>
+        <div class="action-text"><strong>Bathroom Tile Order</strong>Regal Grey Matt tile order confirmed and approved. Works are underway.</div>
       </div>
     </div>
   </div>
