@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Update R3 — Flat 117, Nell Gwynn House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:       #F8F4EE;
+  --cream-dark:  #EDE8DF;
+  --warm-white:  #FDFAF6;
+  --gold:        #9A7B3C;
+  --gold-light:  #C4A45A;
+  --gold-rule:   #C8A96E;
+  --charcoal:    #1C1C1C;
+  --mid:         #4A4540;
+  --muted:       #7A736B;
+  --border:      #D8D0C4;
+  --border-light:#EBE5DC;
+  --red-alert:   #8B2222;
+  --green-ok:    #2C5F3A;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--warm-white); color: var(--charcoal); font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.85; }
+.topbar { background: var(--charcoal); position: sticky; top: 0; z-index: 200; }
+.topbar-inner { max-width: 1100px; margin: 0 auto; padding: 14px 48px; display: flex; align-items: center; justify-content: space-between; }
+.topbar-firm { font-weight: 600; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); }
+.topbar-nav { display: flex; gap: 32px; }
+.topbar-nav a { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9A948C; text-decoration: none; transition: color 0.2s; }
+.topbar-nav a:hover, .topbar-nav a.active { color: var(--gold-light); }
+.hero { background: var(--charcoal); padding: 80px 48px 72px; position: relative; overflow: hidden; }
+.hero-building-img { position: absolute; inset: 0; z-index: 0; }
+.hero-building-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: saturate(1.15) brightness(0.62) contrast(1.05); }
+.hero-building-overlay { position: absolute; inset: 0; background: linear-gradient(150deg, rgba(154,123,60,0.25) 0%, rgba(28,28,28,0.45) 55%, rgba(10,10,10,0.65) 100%); }
+.hero::before { display: none; }
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+.hero-eyebrow::after { content: ''; flex-grow: 1; max-width: 80px; height: 1px; background: var(--gold-rule); }
+h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(42px, 5.5vw, 68px); line-height: 1.08; color: #FFFFFF; letter-spacing: -0.01em; margin-bottom: 6px; text-shadow: 0 2px 24px rgba(0,0,0,0.5); }
+h1 em { font-style: italic; color: #E8C97A; }
+.hero-address { font-size: 12px; color: #C8BFB0; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 14px; margin-bottom: 40px; }
+.hero-meta { display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 32px; flex-wrap: wrap; }
+.meta-block { padding: 0 40px 0 0; border-right: 1px solid rgba(255,255,255,0.12); margin-right: 40px; margin-bottom: 16px; }
+.meta-block:last-child { border-right: none; }
+.meta-label { font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #FFFFFF; margin-bottom: 5px; opacity: 0.7; }
+.meta-value { font-size: 14px; color: #FFFFFF; font-weight: 500; }
+.meta-value.green { color: #7DD98A; }
+.meta-value.amber { color: #FFC107; }
+.gold-rule { height: 2px; background: linear-gradient(to right, var(--gold), var(--gold-light), transparent); max-width: 1100px; margin: 0 auto; }
+.salutation-band { background: var(--cream); border-bottom: 1px solid var(--border); }
+.salutation-inner { max-width: 1100px; margin: 0 auto; padding: 48px 48px; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
+.salutation-label { font-size: 9px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); padding-top: 4px; }
+.salutation-text p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 14px; }
+.salutation-text p:last-child { margin-bottom: 0; }
+.main { max-width: 1100px; margin: 0 auto; padding: 0 48px 100px; }
+.section { padding-top: 72px; }
+.section-heading { display: flex; align-items: baseline; gap: 20px; margin-bottom: 48px; border-bottom: 1px solid var(--border-light); padding-bottom: 18px; }
+.section-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold-light); letter-spacing: 0.2em; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--charcoal); letter-spacing: 0.02em; }
+.article { display: grid; grid-template-columns: 220px 1fr; gap: 48px; margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--border-light); }
+.article:last-child { border-bottom: none; padding-bottom: 0; }
+.article-label-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; font-style: italic; color: var(--charcoal); line-height: 1.3; margin-bottom: 10px; }
+.article-label-tag { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-light); padding: 3px 9px; }
+.article-label-tag.tag-ok   { color: var(--green-ok); border-color: #6DBF82; background: rgba(44,95,58,0.05); }
+.article-label-tag.tag-warn { color: var(--red-alert); border-color: #E57373; background: rgba(139,34,34,0.05); }
+.article-label-tag.tag-info { color: #1A5276; border-color: #5DADE2; background: rgba(26,82,118,0.05); }
+.article-body p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 14px; max-width: 580px; }
+.article-body p:last-child { margin-bottom: 0; }
+.notice { border-left: 3px solid var(--gold-light); background: var(--cream); padding: 16px 20px; margin: 18px 0; max-width: 560px; font-size: 13px; line-height: 1.75; color: var(--mid); }
+.notice strong { color: var(--charcoal); font-weight: 600; }
+.checklist { display: flex; flex-direction: column; gap: 0; max-width: 560px; }
+.check-item { display: flex; gap: 14px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--border-light); font-size: 13px; color: var(--mid); line-height: 1.6; }
+.check-item:last-child { border-bottom: none; }
+.check-icon { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.check-done    { background: rgba(44,95,58,0.12); color: var(--green-ok); }
+.check-pending { background: var(--cream-dark); color: var(--muted); }
+.photo-row { display: grid; gap: 8px; margin-top: 20px; }
+.photo-row.r2 { grid-template-columns: 1fr 1fr; }
+.photo-row.r3 { grid-template-columns: 1fr 1fr 1fr; }
+.photo-card { overflow: hidden; }
+.photo-card img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; filter: saturate(1.0) contrast(1.03); }
+.photo-caption { padding: 8px 12px; font-size: 10px; color: var(--muted); letter-spacing: 0.06em; font-style: italic; background: var(--cream-dark); border-top: 1px solid var(--border-light); }
+.actions-band { background: var(--charcoal); padding: 64px 48px; }
+.actions-inner { max-width: 1100px; margin: 0 auto; }
+.band-heading { font-size: 9px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 32px; }
+.actions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.action-item { display: flex; gap: 24px; align-items: flex-start; }
+.action-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--gold); line-height: 1; flex-shrink: 0; }
+.action-text { font-size: 13px; color: #C8BFB0; line-height: 1.8; padding-top: 8px; }
+.action-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; color: #F0EBE2; margin-bottom: 6px; }
+.signoff-band { background: var(--warm-white); padding: 64px 48px 72px; border-top: 1px solid var(--border); }
+.signoff-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.signoff-message p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 12px; }
+.signoff-block { border-top: 2px solid var(--gold-rule); padding-top: 24px; }
+.signoff-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
+.signoff-role { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.signoff-details { font-size: 12px; color: var(--muted); line-height: 2; }
+.signoff-details a { color: var(--gold); text-decoration: none; }
+.footer { background: var(--charcoal); padding: 24px 48px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; font-size: 11px; color: #5A544E; letter-spacing: 0.08em; }
+.footer-inner span { color: var(--gold-light); }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.hero { animation: fadeUp 0.55s ease both; }
+@media (max-width: 760px) {
+  .topbar-inner, .hero, .salutation-inner, .main, .actions-band, .signoff-band, .footer { padding-left: 20px; padding-right: 20px; }
+  .topbar-nav { display: none; }
+  .salutation-inner, .signoff-inner { grid-template-columns: 1fr; gap: 20px; }
+  .article { grid-template-columns: 1fr; gap: 16px; }
+  .photo-row.r2, .photo-row.r3 { grid-template-columns: 1fr; }
+  .actions-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-firm">ASA Electrical Ltd</span>
+    <nav class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="progress-report.html">Progress Report</a>
+      <a href="update-r3.html" class="active">Latest Update</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-building-img">
+    <img src="images/nell-gwynn-house.jpg" alt="Nell Gwynn House, Chelsea">
+    <div class="hero-building-overlay"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Site Progress Report &nbsp;·&nbsp; Update R3 &nbsp;·&nbsp; 18 March 2026</div>
+    <h1>Flat 117<br><em>Nell Gwynn House</em></h1>
+    <div class="hero-address">Sloane Avenue &nbsp;·&nbsp; Chelsea &nbsp;·&nbsp; London SW3</div>
+    <div class="hero-meta">
+      <div class="meta-block">
+        <div class="meta-label">Date Issued</div>
+        <div class="meta-value">18 March 2026</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Mrs Todd Burlingame</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Site Manager</div>
+        <div class="meta-value">Adivalter Sfalsin</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Tiling</div>
+        <div class="meta-value green">Complete</div>
+      </div>
+      <div class="meta-block">
+        <div class="meta-label">Current Phase</div>
+        <div class="meta-value amber">Fit-Out</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="gold-rule"></div>
+
+<div class="salutation-band">
+  <div class="salutation-inner">
+    <div class="salutation-label">Dear Mrs Burlingame</div>
+    <div class="salutation-text">
+      <p>Please find below my latest update from site at Flat 117 for 18 March 2026. Significant progress has been made across all areas since the last report. Bathroom wall tiling is now complete, kitchen fit-out is advancing with appliances being positioned, first-fix plumbing is done, the re-wire is complete and a new fusebox has been fitted.</p>
+      <p>A particularly important milestone this week: the worktop and stone sink templates were taken on Monday and have been sent to production. The window double-glazing template has also been completed. The sink bowl, toilet and concealed cistern boxing have all arrived on site.</p>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- 01 WORKS COMPLETED -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">01</span>
+      <span class="section-title">Works Completed</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Bathroom Wall Tiling</div>
+        <span class="article-label-tag tag-ok">Complete</span>
+      </div>
+      <div class="article-body">
+        <p>All bathroom wall tiling is now complete. The Regal Grey Gloss 600×600mm tiles have been laid to all walls throughout. The finish is excellent — the large format gloss tiles give the room a clean, light and spacious feel. Grouting and sealing to follow as the suite installation progresses.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>All walls tiled — Regal Grey Gloss 600×600mm</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Floor tiling complete</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Downlighters fitted and operational</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Grouting and silicone sealing — to follow with suite install</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">First-Fix Plumbing</div>
+        <span class="article-label-tag tag-ok">Complete</span>
+      </div>
+      <div class="article-body">
+        <p>All first-fix plumbing works are complete. New copper pipework has been run to all outlet positions, connecting to the existing building supply pipework. All supply routes, waste connections and isolation valves are in position and ready to receive the bathroom suite and kitchen appliances.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>New copper pipework run to all outlet positions using existing supply pipework</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Isolation valves fitted to all supply points</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Waste connections positioned for bath, basin and WC</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Kitchen appliance supply points in position</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Electrical Re-wire &amp; New Fusebox</div>
+        <span class="article-label-tag tag-ok">Complete</span>
+      </div>
+      <div class="article-body">
+        <p>The full kitchen re-wire has been completed and a new fusebox has been installed. All circuits have been updated to current regulations. The new consumer unit is fitted and fully operational. Downlighter positions are wired and ready for second-fix fitting.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>Full kitchen re-wire complete</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>New fusebox (consumer unit) installed</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>All circuits updated to current regulations</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Electrical second-fix — to follow with decoration</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Worktop &amp; Window Templates</div>
+        <span class="article-label-tag tag-ok">Sent to Production</span>
+      </div>
+      <div class="article-body">
+        <p>The kitchen worktop and stone sink were templated on Monday 16 March and have been sent to the fabricator for production. Lead time to be confirmed. The window double-glazing template has also been completed and submitted — this covers the replacement panel currently boarded on site.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>Worktop template taken — sent to fabricator Monday 16 March</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Stone sink template taken — sent to production</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Window double-glazing template completed and submitted</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Worktop and sink delivery — lead time to be confirmed</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 02 WORKS IN PROGRESS -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">02</span>
+      <span class="section-title">Works in Progress</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Kitchen Fit-Out</div>
+        <span class="article-label-tag tag-info">In Progress</span>
+      </div>
+      <div class="article-body">
+        <p>Kitchen installation is advancing well. Wall units are in place and appliances are being positioned and connected. The integrated oven, hob, washing machine and microwave are on site. Worktop installation will follow once the fabricated stone top is delivered from production.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>Wall units installed</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Base unit carcasses in position</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Oven, hob, washing machine and microwave on site and being fitted</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Worktop installation — awaiting fabricated stone delivery</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Doors, handles and final dressing — to follow</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Bulkhead Reconstruction</div>
+        <span class="article-label-tag tag-info">In Progress</span>
+      </div>
+      <div class="article-body">
+        <p>The bulkhead on the left-hand side of the kitchen is being reconstructed following the discovery of loose cabling inside the void during rip-out. New metal stud framework has been fixed and plasterboard is being applied. The bulkhead will be made good and prepared to decoration standard.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>Loose cabling inside void made safe</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Metal stud framework fixed</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Plasterboard, jointing and filling — in progress</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Preparation and decoration — to follow</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Bathroom Suite &amp; Deliveries</div>
+        <span class="article-label-tag tag-info">Goods on Site</span>
+      </div>
+      <div class="article-body">
+        <p>Key sanitary items have arrived on site this week. The stone sink bowl, toilet and concealed cistern boxing are all received and ready for installation. Suite installation will proceed following completion of tiling grouting and sealant works.</p>
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-done">✓</div>Sink bowl — arrived on site</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Toilet — arrived on site</div>
+          <div class="check-item"><div class="check-icon check-done">✓</div>Concealed cistern boxing — arrived on site</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Suite installation — to follow grouting completion</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Bath taps and shower fittings — installation to follow</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 03 PHOTOGRAPHY -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">03</span>
+      <span class="section-title">Site Photography — 18 March 2026</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Bathroom — Tiling Complete</div>
+        <span class="article-label-tag tag-ok">Complete</span>
+      </div>
+      <div class="article-body">
+        <div class="photo-row r2">
+          <div class="photo-card">
+            <img src="images/IMG_2816.JPG" alt="Bathroom wall tiling complete">
+            <div class="photo-caption">Bathroom — Regal Grey Gloss wall tiling complete, bath positioned</div>
+          </div>
+          <div class="photo-card">
+            <img src="images/IMG_2814.JPG" alt="Bathroom tiling detail">
+            <div class="photo-caption">Bathroom — wall tile finish detail, bath surround area</div>
+          </div>
+        </div>
+        <div class="photo-row r2">
+          <div class="photo-card">
+            <img src="images/IMG_2813.JPG" alt="Bathroom overview with downlights">
+            <div class="photo-caption">Bathroom — overview showing completed tiling and new downlights operational</div>
+          </div>
+          <div class="photo-card" style="background: var(--cream); display:flex; align-items:center; padding: 28px;">
+            <p style="font-size:13px; color: var(--mid); line-height:1.85;">The large format 600×600mm gloss tiles give the bathroom a clean and generous feel. The downlighters are now live, showing the finish to full effect. Grouting and suite installation to follow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Kitchen — Fit-Out Underway</div>
+        <span class="article-label-tag tag-info">In Progress</span>
+      </div>
+      <div class="article-body">
+        <div class="photo-row r2">
+          <div class="photo-card">
+            <img src="images/IMG_2833.JPG" alt="Kitchen with appliances being fitted">
+            <div class="photo-caption">Kitchen — oven, hob and washing machine being positioned and connected</div>
+          </div>
+          <div class="photo-card">
+            <img src="images/IMG_2812.JPG" alt="Kitchen overview showing progress">
+            <div class="photo-caption">Kitchen — overall progress, units in place and base installation underway</div>
+          </div>
+        </div>
+        <div class="photo-row r2">
+          <div class="photo-card">
+            <img src="images/IMG_2815.JPG" alt="Kitchen wider view">
+            <div class="photo-caption">Kitchen — wider view showing layout taking shape</div>
+          </div>
+          <div class="photo-card">
+            <img src="images/IMG_2810.JPG" alt="First-fix plumbing complete">
+            <div class="photo-caption">First-fix plumbing — new copper supply pipework and isolation valves complete</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 04 NEXT STEPS -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">04</span>
+      <span class="section-title">Next Steps</span>
+    </div>
+
+    <div class="article">
+      <div class="article-label">
+        <div class="article-label-title">Programme — Coming Up</div>
+        <span class="article-label-tag tag-info">Programme</span>
+      </div>
+      <div class="article-body">
+        <div class="checklist">
+          <div class="check-item"><div class="check-icon check-pending">→</div>Bathroom grouting, silicone sealing and suite installation</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Kitchen worktop installation — on receipt from fabricator</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Sink installation — on receipt from fabricator</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Complete bulkhead — jointing, filling, prep to decoration standard</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Electrical second-fix throughout</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Decoration — Dulux Easycare Timeless throughout</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Window glass panel replacement — on receipt from glazier</div>
+          <div class="check-item"><div class="check-icon check-pending">→</div>Snagging and handover</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- /main -->
+
+<!-- SIGN OFF BAND -->
+<div class="signoff-band">
+  <div class="signoff-inner">
+    <div class="signoff-message">
+      <p>Works are progressing well across all areas. The project is on track and I will continue to keep you updated as each milestone is reached. Please do not hesitate to contact me directly should you have any questions or wish to visit the site.</p>
+    </div>
+    <div>
+      <div class="signoff-block">
+        <div class="signoff-name">Adivalter Sfalsin</div>
+        <div class="signoff-role">Site Manager &nbsp;·&nbsp; ASA Electrical Ltd</div>
+        <div class="signoff-details">
+          Mob: <a href="tel:07886546386">0788 654 6386</a><br>
+          Email: <a href="/cdn-cgi/l/email-protection#6c0d1f0d0900090f181e050f0d002c0109420f0301"><span class="__cf_email__" data-cfemail="07667466626b626473756e64666b476a622964686a">[email&#160;protected]</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>ASA Electrical Ltd</s
