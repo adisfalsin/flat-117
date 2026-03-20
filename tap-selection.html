@@ -8,111 +8,93 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --cream:       #F8F4EE;
-  --cream-dark:  #EDE8DF;
-  --warm-white:  #FDFAF6;
-  --gold:        #9A7B3C;
-  --gold-light:  #C4A45A;
-  --gold-rule:   #C8A96E;
-  --charcoal:    #1C1C1C;
-  --mid:         #4A4540;
-  --muted:       #7A736B;
-  --border:      #D8D0C4;
-  --border-light:#EBE5DC;
+  --cream:#F8F4EE; --cream-dark:#EDE8DF; --warm-white:#FDFAF6;
+  --gold:#9A7B3C; --gold-light:#C4A45A; --gold-rule:#C8A96E;
+  --charcoal:#1C1C1C; --mid:#4A4540; --muted:#7A736B;
+  --border:#D8D0C4; --border-light:#EBE5DC;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--warm-white); color: var(--charcoal); font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.85; }
-
-/* TOPBAR */
-.topbar { background: var(--charcoal); position: sticky; top: 0; z-index: 200; }
-.topbar-inner { max-width: 1100px; margin: 0 auto; padding: 14px 48px; display: flex; align-items: center; justify-content: space-between; }
-.topbar-firm { font-weight: 600; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); }
-.topbar-nav { display: flex; gap: 32px; }
-.topbar-nav a { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9A948C; text-decoration: none; transition: color 0.2s; }
-.topbar-nav a:hover, .topbar-nav a.active { color: var(--gold-light); }
-
-/* HERO */
-.hero { background: var(--charcoal); padding: 80px 48px 72px; position: relative; overflow: hidden; }
-.hero-building-img { position: absolute; inset: 0; z-index: 0; }
-.hero-building-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: saturate(1.15) brightness(0.62) contrast(1.05); }
-.hero-building-overlay { position: absolute; inset: 0; background: linear-gradient(150deg, rgba(154,123,60,0.25) 0%, rgba(28,28,28,0.45) 55%, rgba(10,10,10,0.65) 100%); }
-.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-.hero-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
-.hero-eyebrow::after { content: ''; flex-grow: 1; max-width: 80px; height: 1px; background: var(--gold-rule); }
-h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: clamp(42px, 5.5vw, 68px); line-height: 1.08; color: #FFFFFF; letter-spacing: -0.01em; margin-bottom: 6px; text-shadow: 0 2px 24px rgba(0,0,0,0.5); }
-h1 em { font-style: italic; color: #E8C97A; }
-.hero-address { font-size: 12px; color: #C8BFB0; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 14px; margin-bottom: 40px; }
-.hero-meta { display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 32px; flex-wrap: wrap; }
-.meta-block { padding: 0 40px 0 0; border-right: 1px solid rgba(255,255,255,0.12); margin-right: 40px; margin-bottom: 16px; }
-.meta-block:last-child { border-right: none; }
-.meta-label { font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: #FFFFFF; margin-bottom: 5px; opacity: 0.7; }
-.meta-value { font-size: 14px; color: #FFFFFF; font-weight: 500; }
-.gold-rule { height: 2px; background: linear-gradient(to right, var(--gold), var(--gold-light), transparent); max-width: 1100px; margin: 0 auto; }
-
-/* SALUTATION */
-.salutation-band { background: var(--cream); border-bottom: 1px solid var(--border); }
-.salutation-inner { max-width: 1100px; margin: 0 auto; padding: 48px; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
-.salutation-label { font-size: 9px; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); padding-top: 4px; }
-.salutation-text p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 14px; }
-.salutation-text p:last-child { margin-bottom: 0; }
-
-/* MAIN */
-.main { max-width: 1100px; margin: 0 auto; padding: 0 48px 100px; }
-.section { padding-top: 72px; }
-.section-heading { display: flex; align-items: baseline; gap: 20px; margin-bottom: 48px; border-bottom: 1px solid var(--border-light); padding-bottom: 18px; }
-.section-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--gold-light); letter-spacing: 0.2em; }
-.section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--charcoal); letter-spacing: 0.02em; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--warm-white);color:var(--charcoal);font-family:'Montserrat',sans-serif;font-weight:300;font-size:14px;line-height:1.85;}
+.topbar{background:var(--charcoal);position:sticky;top:0;z-index:200;}
+.topbar-inner{max-width:1100px;margin:0 auto;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;}
+.topbar-firm{font-weight:600;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-light);}
+.topbar-nav{display:flex;gap:32px;}
+.topbar-nav a{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#9A948C;text-decoration:none;transition:color 0.2s;}
+.topbar-nav a:hover,.topbar-nav a.active{color:var(--gold-light);}
+.hero{background:var(--charcoal);padding:80px 48px 72px;position:relative;overflow:hidden;}
+.hero-building-img{position:absolute;inset:0;z-index:0;}
+.hero-building-img img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(1.15) brightness(0.62) contrast(1.05);}
+.hero-building-overlay{position:absolute;inset:0;background:linear-gradient(150deg,rgba(154,123,60,0.25) 0%,rgba(28,28,28,0.45) 55%,rgba(10,10,10,0.65) 100%);}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.hero-eyebrow{font-size:9px;font-weight:600;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;display:flex;align-items:center;gap:16px;}
+.hero-eyebrow::after{content:'';flex-grow:1;max-width:80px;height:1px;background:var(--gold-rule);}
+h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(42px,5.5vw,68px);line-height:1.08;color:#FFFFFF;letter-spacing:-0.01em;margin-bottom:6px;text-shadow:0 2px 24px rgba(0,0,0,0.5);}
+h1 em{font-style:italic;color:#E8C97A;}
+.hero-address{font-size:12px;color:#C8BFB0;letter-spacing:0.22em;text-transform:uppercase;margin-top:14px;margin-bottom:40px;}
+.hero-meta{display:flex;gap:0;border-top:1px solid rgba(255,255,255,0.15);padding-top:32px;flex-wrap:wrap;}
+.meta-block{padding:0 40px 0 0;border-right:1px solid rgba(255,255,255,0.12);margin-right:40px;margin-bottom:16px;}
+.meta-block:last-child{border-right:none;}
+.meta-label{font-size:9px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:#FFFFFF;margin-bottom:5px;opacity:0.7;}
+.meta-value{font-size:14px;color:#FFFFFF;font-weight:500;}
+.gold-rule{height:2px;background:linear-gradient(to right,var(--gold),var(--gold-light),transparent);max-width:1100px;margin:0 auto;}
+.salutation-band{background:var(--cream);border-bottom:1px solid var(--border);}
+.salutation-inner{max-width:1100px;margin:0 auto;padding:48px;display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;}
+.salutation-label{font-size:9px;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);padding-top:4px;}
+.salutation-text p{font-size:14px;line-height:1.9;color:var(--mid);margin-bottom:14px;}
+.salutation-text p:last-child{margin-bottom:0;}
+.main{max-width:1100px;margin:0 auto;padding:0 48px 100px;}
+.section{padding-top:72px;}
+.section-heading{display:flex;align-items:baseline;gap:20px;margin-bottom:12px;border-bottom:1px solid var(--border-light);padding-bottom:18px;}
+.section-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold-light);letter-spacing:0.2em;}
+.section-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--charcoal);letter-spacing:0.02em;}
+.section-note{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:36px;padding-top:12px;}
 
 /* TAP CARDS */
-.tap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-.tap-card { background: var(--warm-white); display: flex; flex-direction: column; transition: background 0.2s; }
-.tap-card:hover { background: var(--cream); }
-.tap-card.highlight { background: var(--cream); border: 2px solid var(--gold-light); margin: -1px; }
-.tap-img-wrap { padding: 32px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; min-height: 240px; border-bottom: 1px solid var(--border-light); }
-.tap-img-wrap img { max-height: 200px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.08)); }
-.tap-img-placeholder { width: 80px; height: 160px; background: var(--cream-dark); border-radius: 4px; }
-.tap-body { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-.tap-brand-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; display: inline-block; padding: 3px 10px; margin-bottom: 2px; }
-.tag-grohe { color: var(--gold); border: 1px solid var(--gold-light); background: rgba(154,123,60,0.06); }
-.tag-hans  { color: #1A5276; border: 1px solid #5DADE2; background: rgba(26,82,118,0.05); }
-.tap-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--charcoal); line-height: 1.25; }
-.tap-ref { font-size: 10px; color: var(--muted); letter-spacing: 0.12em; font-family: 'Montserrat', sans-serif; }
-.tap-desc { font-size: 12.5px; color: var(--mid); line-height: 1.85; flex: 1; margin-top: 4px; }
-.tap-specs { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; }
-.tap-spec { display: flex; gap: 8px; font-size: 11px; }
-.spec-label { color: var(--muted); min-width: 80px; }
-.spec-value { color: var(--mid); font-weight: 500; }
-.recommended-badge { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-rule); background: rgba(200,169,110,0.12); padding: 3px 10px; margin-bottom: 6px; }
+.tap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+.tap-card{background:var(--warm-white);display:flex;flex-direction:column;padding:28px;transition:background 0.2s;position:relative;}
+.tap-card:hover{background:var(--cream);}
+.tap-card.recommended{background:var(--cream);border:2px solid var(--gold-light);margin:-1px;z-index:1;}
+.rec-badge{display:inline-block;font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-rule);background:rgba(200,169,110,0.15);padding:3px 10px;margin-bottom:10px;}
+.tap-brand-tag{display:inline-block;font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;padding:3px 9px;margin-bottom:8px;}
+.tag-grohe{color:var(--gold);border:1px solid var(--gold-light);background:rgba(154,123,60,0.06);}
+.tag-hans{color:#1A5276;border:1px solid #5DADE2;background:rgba(26,82,118,0.05);}
+.tap-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:4px;}
+.tap-ref{font-size:10px;color:var(--muted);letter-spacing:0.12em;margin-bottom:12px;}
+.tap-desc{font-size:12.5px;color:var(--mid);line-height:1.85;flex:1;}
+.tap-specs{margin-top:16px;border-top:1px solid var(--border-light);padding-top:14px;display:flex;flex-direction:column;gap:5px;}
+.tap-spec{display:flex;gap:8px;font-size:11px;}
+.spec-label{color:var(--muted);min-width:85px;flex-shrink:0;}
+.spec-value{color:var(--mid);font-weight:500;}
+.tap-link{display:inline-block;margin-top:18px;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold-light);padding-bottom:2px;text-decoration:none;}
+.tap-link:hover{color:var(--charcoal);border-color:var(--charcoal);}
 
-/* NOTE BOX */
-.note-box { background: var(--cream); border-left: 3px solid var(--gold-light); padding: 20px 24px; margin-top: 48px; }
-.note-box p { font-size: 13px; color: var(--mid); line-height: 1.85; }
-.note-box strong { color: var(--charcoal); font-weight: 600; }
+/* KITCHEN GRID — 2 col */
+.tap-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+
+/* NOTE */
+.note-box{background:var(--cream);border-left:3px solid var(--gold-light);padding:20px 24px;margin-top:48px;}
+.note-box p{font-size:13px;color:var(--mid);line-height:1.85;}
+.note-box strong{color:var(--charcoal);font-weight:600;}
 
 /* SIGNOFF */
-.signoff-band { background: var(--warm-white); padding: 64px 48px 72px; border-top: 1px solid var(--border); }
-.signoff-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.signoff-message p { font-size: 14px; line-height: 1.9; color: var(--mid); margin-bottom: 12px; }
-.signoff-block { border-top: 2px solid var(--gold-rule); padding-top: 24px; }
-.signoff-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; }
-.signoff-role { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-.signoff-details { font-size: 12px; color: var(--muted); line-height: 2; }
-.signoff-details a { color: var(--gold); text-decoration: none; }
-
-/* FOOTER */
-.footer { background: var(--charcoal); padding: 24px 48px; }
-.footer-inner { max-width: 1100px; margin: 0 auto; text-align: center; font-size: 11px; color: #5A544E; letter-spacing: 0.08em; }
-.footer-inner span { color: var(--gold-light); }
-
-@media (max-width: 900px) {
-  .tap-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px) {
-  .topbar-inner, .hero, .salutation-inner, .main, .signoff-band, .footer { padding-left: 20px; padding-right: 20px; }
-  .topbar-nav { display: none; }
-  .salutation-inner, .signoff-inner { grid-template-columns: 1fr; gap: 20px; }
-  .tap-grid { grid-template-columns: 1fr; }
+.signoff-band{background:var(--warm-white);padding:64px 48px 72px;border-top:1px solid var(--border);}
+.signoff-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.signoff-message p{font-size:14px;line-height:1.9;color:var(--mid);margin-bottom:12px;}
+.signoff-block{border-top:2px solid var(--gold-rule);padding-top:24px;}
+.signoff-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:400;color:var(--charcoal);margin-bottom:4px;}
+.signoff-role{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.signoff-details{font-size:12px;color:var(--muted);line-height:2;}
+.signoff-details a{color:var(--gold);text-decoration:none;}
+.footer{background:var(--charcoal);padding:24px 48px;}
+.footer-inner{max-width:1100px;margin:0 auto;text-align:center;font-size:11px;color:#5A544E;letter-spacing:0.08em;}
+.footer-inner span{color:var(--gold-light);}
+@media(max-width:900px){.tap-grid{grid-template-columns:1fr 1fr;}.tap-grid-2{grid-template-columns:1fr;}}
+@media(max-width:600px){
+  .topbar-inner,.hero,.salutation-inner,.main,.signoff-band,.footer{padding-left:20px;padding-right:20px;}
+  .topbar-nav{display:none;}
+  .salutation-inner,.signoff-inner{grid-template-columns:1fr;gap:20px;}
+  .tap-grid,.tap-grid-2{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -140,22 +122,10 @@ h1 em { font-style: italic; color: #E8C97A; }
     <h1>Tap Selection<br><em>Bathroom &amp; Kitchen</em></h1>
     <div class="hero-address">Flat 117 &nbsp;·&nbsp; Nell Gwynn House &nbsp;·&nbsp; Chelsea SW3</div>
     <div class="hero-meta">
-      <div class="meta-block">
-        <div class="meta-label">Category</div>
-        <div class="meta-value">Basin Mixer Taps</div>
-      </div>
-      <div class="meta-block">
-        <div class="meta-label">Finish</div>
-        <div class="meta-value">Chrome</div>
-      </div>
-      <div class="meta-block">
-        <div class="meta-label">Technology</div>
-        <div class="meta-value">EcoSmart Water-Saving</div>
-      </div>
-      <div class="meta-block">
-        <div class="meta-label">Action Required</div>
-        <div class="meta-value" style="color:#FFC107;">Client Selection</div>
-      </div>
+      <div class="meta-block"><div class="meta-label">Finish</div><div class="meta-value">Chrome</div></div>
+      <div class="meta-block"><div class="meta-label">Technology</div><div class="meta-value">EcoSmart Water-Saving</div></div>
+      <div class="meta-block"><div class="meta-label">Brands</div><div class="meta-value">GROHE &amp; hansgrohe</div></div>
+      <div class="meta-block"><div class="meta-label">Action Required</div><div class="meta-value" style="color:#FFC107;">Client Selection</div></div>
     </div>
   </div>
 </section>
@@ -165,129 +135,141 @@ h1 em { font-style: italic; color: #E8C97A; }
   <div class="salutation-inner">
     <div class="salutation-label">Dear Mrs Burlingame</div>
     <div class="salutation-text">
-      <p>Please find below our proposed tap options for the bathroom basin at Flat 117. All options are chrome finish, water-saving, and specified for free-standing or vessel basins. We have included options from both GROHE and hansgrohe — both leading German manufacturers known for quality and longevity.</p>
-      <p>Please review the options and advise your preferred choice at your earliest convenience so we can proceed with ordering. The kitchen tap will be presented separately once the worktop and sink are confirmed from the fabricator.</p>
+      <p>Please find below our proposed tap options for the bathroom basin and kitchen at Flat 117. All options are chrome finish and water-saving, from GROHE and hansgrohe — leading German manufacturers known for quality and longevity.</p>
+      <p>Each option includes a direct link to view the full product details. Please advise your preferred choice at your earliest convenience so we can proceed with ordering.</p>
     </div>
   </div>
 </div>
 
 <div class="main">
 
-  <!-- BATHROOM TAPS -->
+  <!-- BATHROOM -->
   <div class="section">
     <div class="section-heading">
       <span class="section-num">01</span>
       <span class="section-title">Bathroom Basin — Options</span>
     </div>
+    <p class="section-note">All options below are single-lever basin mixers in chrome, water-saving, designed for free-standing or vessel basins.</p>
 
     <div class="tap-grid">
 
-      <!-- GROHE BauLoop -->
+      <!-- hansgrohe Logis Fine -->
       <div class="tap-card">
-        <div class="tap-img-wrap">
-          <img src="https://www.grohe.co.uk/medias/sys_master/root/hb5/h00/8796207644702/GROHE-23764000-product-image-front-1-cut-out.jpg"
-               onerror="this.parentNode.innerHTML='<div class=tap-img-placeholder></div>'"
-               alt="GROHE BauLoop XL">
+        <span class="tap-brand-tag tag-hans">hansgrohe</span>
+        <div class="tap-name">Logis Fine 240</div>
+        <div class="tap-ref">Ref: 71258000</div>
+        <div class="tap-desc">Slender, refined profile designed for free-standing basins. EcoSmart water-saving technology at 5 l/min. CoolStart energy-saving — defaults to cold until temperature is adjusted. A clean, minimal choice.</div>
+        <div class="tap-specs">
+          <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">232 mm</span></div>
+          <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">5 l/min (EcoSmart)</span></div>
+          <div class="tap-spec"><span class="spec-label">Technology</span><span class="spec-value">CoolStart</span></div>
         </div>
-        <div class="tap-body">
-          <span class="tap-brand-tag tag-grohe">GROHE</span>
-          <div class="tap-name">BauLoop XL</div>
-          <div class="tap-ref">Ref: 23764000</div>
-          <div class="tap-desc">Smooth cylindrical body with a distinctive loop-shaped lever. Extra-high spout designed specifically for free-standing vessel basins. GROHE LongLife ceramic cartridge for precise, durable temperature control. EcoJoy water-saving aerator at 5.7 l/min. StarLight chrome finish — scratch resistant and tarnish-proof.</div>
-          <div class="tap-specs">
-            <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">XL — for vessel basins</span></div>
-            <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">5.7 l/min (EcoJoy)</span></div>
-            <div class="tap-spec"><span class="spec-label">Installation</span><span class="spec-value">Single hole, monobloc</span></div>
-          </div>
-        </div>
+        <a class="tap-link" href="https://www.amazon.co.uk/hansgrohe-Logis-Fine-bathroom-water-saving/dp/B098JKJDMM/" target="_blank">View on Amazon →</a>
       </div>
 
       <!-- GROHE BauEdge -->
       <div class="tap-card">
-        <div class="tap-img-wrap">
-          <img src="https://www.grohe.co.uk/medias/sys_master/root/hf7/hc9/8796214902814/GROHE-23761000-product-image-front-1-cut-out.jpg"
-               onerror="this.parentNode.innerHTML='<div class=tap-img-placeholder></div>'"
-               alt="GROHE BauEdge XL">
+        <span class="tap-brand-tag tag-grohe">GROHE</span>
+        <div class="tap-name">BauEdge XL</div>
+        <div class="tap-ref">Ref: 23761000</div>
+        <div class="tap-desc">Clean geometric lines with a flat-edged body and extra-high spout for free-standing basins. GROHE LongLife ceramic cartridge. EcoJoy water-saving. A structured, architectural look for a contemporary bathroom.</div>
+        <div class="tap-specs">
+          <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">XL — vessel basins</span></div>
+          <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">5.7 l/min (EcoJoy)</span></div>
+          <div class="tap-spec"><span class="spec-label">Body</span><span class="spec-value">Geometric, flat-edged</span></div>
         </div>
-        <div class="tap-body">
-          <span class="tap-brand-tag tag-grohe">GROHE</span>
-          <div class="tap-name">BauEdge XL</div>
-          <div class="tap-ref">Ref: 23761000</div>
-          <div class="tap-desc">Clean geometric lines with a flat-edged body — the more angular counterpart to the BauLoop. Extra-high spout for free-standing basins. GROHE LongLife cartridge and EcoJoy water-saving technology. A structured, architectural look for a contemporary bathroom.</div>
-          <div class="tap-specs">
-            <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">XL — for vessel basins</span></div>
-            <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">5.7 l/min (EcoJoy)</span></div>
-            <div class="tap-spec"><span class="spec-label">Installation</span><span class="spec-value">Single hole, monobloc</span></div>
-          </div>
-        </div>
+        <a class="tap-link" href="https://www.amazon.co.uk/GROHE-Single-Lever-Water-Saving-Free-Standing-23761000/dp/B0749VF58Q/" target="_blank">View on Amazon →</a>
       </div>
 
-      <!-- hansgrohe Logis Fine -->
-      <div class="tap-card">
-        <div class="tap-img-wrap">
-          <img src="https://www.hansgrohe.co.uk/medias/sys_master/h35/hba/8798018756638/hansgrohe-71258000-front-1-cut-out.jpg"
-               onerror="this.parentNode.innerHTML='<div class=tap-img-placeholder></div>'"
-               alt="hansgrohe Logis Fine">
+      <!-- hansgrohe Rebris S — RECOMMENDED -->
+      <div class="tap-card recommended">
+        <span class="rec-badge">Our Recommendation</span>
+        <span class="tap-brand-tag tag-hans">hansgrohe</span>
+        <div class="tap-name">Rebris S 242</div>
+        <div class="tap-ref">Ref: 72582000</div>
+        <div class="tap-desc">Soft, rounded contemporary form with a 242mm spout height. CoolStart energy-saving. EcoSmart at 5 l/min. AirPower aerator for a soft, splash-free flow. A timeless design that suits both classic and contemporary bathrooms — our preferred suggestion for this project.</div>
+        <div class="tap-specs">
+          <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">242 mm</span></div>
+          <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">5 l/min (EcoSmart)</span></div>
+          <div class="tap-spec"><span class="spec-label">Technology</span><span class="spec-value">CoolStart + AirPower</span></div>
         </div>
-        <div class="tap-body">
-          <span class="tap-brand-tag tag-hans">hansgrohe</span>
-          <div class="tap-name">Logis Fine 240</div>
-          <div class="tap-ref">Ref: 71258000</div>
-          <div class="tap-desc">Slender, refined profile with a 232mm spout height. EcoSmart water-saving technology limits flow to 5 l/min without sacrificing comfort. CoolStart energy-saving — defaults to cold water until temperature is adjusted. A minimal, elegant option for a clean bathroom aesthetic.</div>
-          <div class="tap-specs">
-            <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">232 mm</span></div>
-            <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">5 l/min (EcoSmart)</span></div>
-            <div class="tap-spec"><span class="spec-label">Installation</span><span class="spec-value">Single hole, no waste set</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- hansgrohe Rebris S -->
-      <div class="tap-card highlight">
-        <div class="tap-img-wrap">
-          <img src="https://www.hansgrohe.co.uk/medias/sys_master/h9b/h7a/8798018789406/hansgrohe-72582000-front-1-cut-out.jpg"
-               onerror="this.parentNode.innerHTML='<div class=tap-img-placeholder></div>'"
-               alt="hansgrohe Rebris S">
-        </div>
-        <div class="tap-body">
-          <span class="recommended-badge">Suggested</span>
-          <span class="tap-brand-tag tag-hans">hansgrohe</span>
-          <div class="tap-name">Rebris S 242</div>
-          <div class="tap-ref">Ref: 72582000</div>
-          <div class="tap-desc">Soft, rounded contemporary form with a 242mm spout height. CoolStart energy-saving technology. EcoSmart water-saving at 5 l/min. AirPower aerator enriches the flow with air for a soft, splash-free stream. A timeless design that works equally well in classic and contemporary bathrooms.</div>
-          <div class="tap-specs">
-            <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">242 mm</span></div>
-            <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">5 l/min (EcoSmart)</span></div>
-            <div class="tap-spec"><span class="spec-label">Technology</span><span class="spec-value">CoolStart + AirPower</span></div>
-            <div class="tap-spec"><span class="spec-label">Installation</span><span class="spec-value">Single hole, no waste set</span></div>
-          </div>
-        </div>
+        <a class="tap-link" href="https://www.amazon.co.uk/hansgrohe-Logis-Fine-bathroom-water-saving/dp/B098JKJDMM/" target="_blank">View on Amazon →</a>
       </div>
 
       <!-- hansgrohe Vivenis -->
       <div class="tap-card">
-        <div class="tap-img-wrap">
-          <img src="https://www.hansgrohe.co.uk/medias/sys_master/h77/h09/8798018822174/hansgrohe-75042000-front-1-cut-out.jpg"
-               onerror="this.parentNode.innerHTML='<div class=tap-img-placeholder></div>'"
-               alt="hansgrohe Vivenis 250">
+        <span class="tap-brand-tag tag-hans">hansgrohe</span>
+        <div class="tap-name">Vivenis 250</div>
+        <div class="tap-ref">Ref: 75042000</div>
+        <div class="tap-desc">The tallest and most sculptural option at 250mm — designed specifically for washbowls. A graceful, distinctive silhouette that makes a confident statement. EcoSmart water-saving throughout. Ideal for a deep or raised vessel basin.</div>
+        <div class="tap-specs">
+          <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">250 mm — tallest</span></div>
+          <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">EcoSmart water-saving</span></div>
+          <div class="tap-spec"><span class="spec-label">Style</span><span class="spec-value">Statement / sculptural</span></div>
         </div>
-        <div class="tap-body">
-          <span class="tap-brand-tag tag-hans">hansgrohe</span>
-          <div class="tap-name">Vivenis 250</div>
-          <div class="tap-ref">Ref: 75042000</div>
-          <div class="tap-desc">The tallest and most sculptural option in this selection at 250mm — designed specifically for washbowls. A graceful, distinctive silhouette that makes a confident statement. EcoSmart water-saving technology throughout. Well suited to a deep or raised vessel basin where presence and height are desired.</div>
-          <div class="tap-specs">
-            <div class="tap-spec"><span class="spec-label">Spout height</span><span class="spec-value">250 mm — tallest option</span></div>
-            <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">EcoSmart water-saving</span></div>
-            <div class="tap-spec"><span class="spec-label">Installation</span><span class="spec-value">Single hole, no waste set</span></div>
-          </div>
+        <a class="tap-link" href="https://www.amazon.co.uk/hansgrohe-Logis-Fine-bathroom-water-saving/dp/B098JKJDMM/" target="_blank">View on Amazon →</a>
+      </div>
+
+      <!-- hansgrohe Focus -->
+      <div class="tap-card">
+        <span class="tap-brand-tag tag-hans">hansgrohe</span>
+        <div class="tap-name">Focus Basin Mixer</div>
+        <div class="tap-ref">Ref: hansgrohe Focus</div>
+        <div class="tap-desc">A sleek, minimal single-lever basin mixer in chrome. Clean lines and a reliable, quality finish. Water-saving aerator included. A solid, understated option that complements any bathroom style without dominating the space.</div>
+        <div class="tap-specs">
+          <div class="tap-spec"><span class="spec-label">Finish</span><span class="spec-value">Chrome</span></div>
+          <div class="tap-spec"><span class="spec-label">Style</span><span class="spec-value">Minimal / understated</span></div>
+          <div class="tap-spec"><span class="spec-label">Waste set</span><span class="spec-value">Without waste set</span></div>
         </div>
+        <a class="tap-link" href="https://www.amazon.co.uk/hansgrohe-Focus-Basin-without-chrome/dp/B07258FRM8/" target="_blank">View on Amazon →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KITCHEN -->
+  <div class="section">
+    <div class="section-heading">
+      <span class="section-num">02</span>
+      <span class="section-title">Kitchen — Options</span>
+    </div>
+    <p class="section-note">Kitchen tap options below. Note: there is a light switch positioned above the sink area — tap height and spout reach should be considered. The first option (GROHE Blue) is recommended as it includes an integrated filter and the lower profile works well with the switch position above.</p>
+
+    <div class="tap-grid-2">
+
+      <!-- GROHE Blue / Feather -->
+      <div class="tap-card recommended">
+        <span class="rec-badge">Our Recommendation</span>
+        <span class="tap-brand-tag tag-grohe">GROHE</span>
+        <div class="tap-name">GROHE Blue — Filtered Kitchen Tap</div>
+        <div class="tap-ref">Ref: 31685000</div>
+        <div class="tap-desc">A premium kitchen tap with integrated water filtration — delivers chilled, filtered, still or sparkling water directly from the tap. Chrome finish. Suits the kitchen layout well given the light switch positioned above: the profile and spout are designed not to obstruct wall-mounted fittings. A practical and sophisticated choice for a Chelsea kitchen.</div>
+        <div class="tap-specs">
+          <div class="tap-spec"><span class="spec-label">Feature</span><span class="spec-value">Integrated water filter</span></div>
+          <div class="tap-spec"><span class="spec-label">Finish</span><span class="spec-value">Chrome</span></div>
+          <div class="tap-spec"><span class="spec-label">Suitability</span><span class="spec-value">Good clearance for switch above</span></div>
+        </div>
+        <a class="tap-link" href="https://www.amazon.co.uk/GROHE-31685000-Feather-Fixture-Multicoloured/dp/B08472GCH5" target="_blank">View on Amazon →</a>
+      </div>
+
+      <!-- GROHE Start Edge / Get -->
+      <div class="tap-card">
+        <span class="tap-brand-tag tag-grohe">GROHE</span>
+        <div class="tap-name">GROHE Start Edge — Kitchen Mixer</div>
+        <div class="tap-ref">Ref: Start Edge / Get range</div>
+        <div class="tap-desc">A clean, practical single-lever kitchen mixer in chrome. Swivel spout for flexibility across the sink. GROHE LongLife ceramic cartridge for durable, smooth operation. EcoJoy water-saving. A dependable workhorse tap that suits the Clerkenwell White kitchen aesthetic well.</div>
+        <div class="tap-specs">
+          <div class="tap-spec"><span class="spec-label">Spout</span><span class="spec-value">Swivel, high arc</span></div>
+          <div class="tap-spec"><span class="spec-label">Flow rate</span><span class="spec-value">EcoJoy water-saving</span></div>
+          <div class="tap-spec"><span class="spec-label">Finish</span><span class="spec-value">Chrome</span></div>
+        </div>
+        <a class="tap-link" href="https://www.screwfix.com/p/grohe-start-edge-top-lever-kitchen-tap-chrome/433vy" target="_blank">View at Screwfix →</a>
       </div>
 
     </div>
 
     <div class="note-box">
-      <p><strong>Kitchen tap</strong> — The kitchen tap selection will be presented separately once the worktop and sink specification is confirmed from the fabricator. The sink bowl design and worktop cutout will determine the most suitable tap height and reach.</p>
+      <p><strong>Note on switch position</strong> — there is a light switch fitted above the kitchen sink area. When reviewing the kitchen tap options, please consider the spout height in relation to this. The GROHE Blue option is recommended as its profile sits lower and the spout clears the switch comfortably.</p>
     </div>
 
   </div>
@@ -297,8 +279,8 @@ h1 em { font-style: italic; color: #E8C97A; }
 <div class="signoff-band">
   <div class="signoff-inner">
     <div class="signoff-message">
-      <p>Please advise your preferred tap at your earliest convenience so we can proceed with ordering. If you would like to see any of these options in a showroom before deciding, I am happy to arrange this.</p>
-      <p>Do not hesitate to contact me directly should you have any questions.</p>
+      <p>Please review the options and advise your preferred tap for both the bathroom basin and the kitchen. If you would like to see any of these in a showroom before deciding, I am happy to arrange this.</p>
+      <p>Please do not hesitate to contact me directly should you have any questions.</p>
     </div>
     <div>
       <div class="signoff-block">
